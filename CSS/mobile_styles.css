@@ -1,0 +1,409 @@
+/* 3つの集客スキルの画像を生成するためのスタイル */
+.skill-card {
+    border-radius: 10px;
+    padding: 30px;
+    margin: 15px 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.skill-card .icon {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.marketing-skill {
+    background-color: #8a2be2;
+}
+
+.marketing-skill .icon {
+    color: #8a2be2;
+}
+
+.customer-psychology-skill {
+    background-color: #ff6b6b;
+}
+
+.customer-psychology-skill .icon {
+    color: #ff6b6b;
+}
+
+.business-strategy-skill {
+    background-color: #4ecdc4;
+}
+
+.business-strategy-skill .icon {
+    color: #4ecdc4;
+}
+
+/* モバイル対応の強化 */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    header {
+        padding: 10px 0;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+    
+    .nav-menu.active {
+        display: block;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .benefits-list {
+        flex-direction: column;
+    }
+    
+    .benefit-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .problem-solution-section .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .success-stories .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-section .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-section .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        margin-top: 20px;
+    }
+}
+
+/* タップしやすいボタンサイズの確保 */
+@media (max-width: 768px) {
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 18px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .nav-menu a {
+        padding: 20px 15px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    .form-submit-button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+}
+
+/* 読みやすいフォントサイズとコントラスト */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+    
+    p {
+        margin-bottom: 20px;
+    }
+    
+    .section-title {
+        margin-bottom: 30px;
+    }
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.hamburger-menu span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.hamburger-menu span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger-menu span:nth-child(2) {
+    top: 8px;
+}
+
+.hamburger-menu span:nth-child(3) {
+    top: 16px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* FAQ セクションのスタイル */
+.faq-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:after {
+    content: '+';
+    font-size: 20px;
+}
+
+.faq-question.active:after {
+    content: '-';
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.faq-answer.active {
+    padding: 20px;
+    max-height: 500px;
+}
+
+/* お問い合わせフォームのスタイル */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.form-submit-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit-button:hover {
+    background-color: #ff5252;
+}
+
+/* 料金プランのスタイル */
+.pricing-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.pricing-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.pricing-card .price {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+}
+
+.pricing-card .price span {
+    font-size: 16px;
+    color: #666;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.pricing-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-card .cta-button {
+    display: inline-block;
+    width: 100%;
+}
