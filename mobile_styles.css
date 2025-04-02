@@ -1,3 +1,8 @@
+/* 
+ * Fleeks - 美容師向けインスタ集客特化オンラインサロン
+ * モバイル用スタイルシート
+ */
+
 /* 3つの集客スキルの画像を生成するためのスタイル */
 .skill-card {
     border-radius: 10px;
@@ -61,13 +66,13 @@
 }
 
 /* モバイル対応の強化 */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .container {
         width: 100%;
         padding: 0 15px;
     }
     
-    header {
+    .header {
         padding: 10px 0;
     }
     
@@ -77,9 +82,11 @@
         top: 60px;
         left: 0;
         width: 100%;
+        height: auto;
         background-color: #fff;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         z-index: 100;
+        padding: 20px 0;
     }
     
     .nav-menu.active {
@@ -102,20 +109,23 @@
         text-align: center;
     }
     
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
+    .mobile-menu-toggle {
+        display: flex;
     }
     
-    .hero-section {
-        padding: 60px 0;
+    .header-cta {
+        display: none;
     }
     
-    .hero-content h1 {
+    .hero-title {
         font-size: 28px;
     }
     
-    .benefits-list {
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .hero-benefits {
         flex-direction: column;
     }
     
@@ -124,42 +134,52 @@
         margin-bottom: 30px;
     }
     
-    .problem-solution-section .grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .success-stories .grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .skills-section .grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .pricing-section .grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .cta-button {
-        padding: 12px 24px;
-        font-size: 16px;
-    }
-    
-    .footer-content {
+    .problems-container, 
+    .solution-diagram, 
+    .solution-points, 
+    .case-studies-container, 
+    .services-container {
         flex-direction: column;
+    }
+    
+    .problem-item, 
+    .solution-element, 
+    .solution-point, 
+    .case-study-card, 
+    .service-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .curriculum-months {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile, 
+    .pricing-card {
+        flex-direction: column;
+    }
+    
+    .profile-image, 
+    .pricing-image {
+        margin-bottom: 30px;
         text-align: center;
     }
     
-    .footer-links {
-        margin-top: 20px;
+    .pricing-features ul {
+        grid-template-columns: 1fr;
     }
 }
 
 /* タップしやすいボタンサイズの確保 */
 @media (max-width: 768px) {
-    .cta-button {
+    .btn {
         padding: 15px 30px;
-        font-size: 18px;
+        font-size: 16px;
+        display: inline-block;
+    }
+    
+    .btn-large {
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
@@ -179,54 +199,100 @@
         font-size: 16px;
     }
     
-    .form-submit-button {
-        padding: 15px 30px;
-        font-size: 18px;
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .hero {
+        padding-top: 100px;
+    }
+    
+    .solution-point {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .success-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-circle {
+        margin-bottom: 30px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
 /* 読みやすいフォントサイズとコントラスト */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
     body {
         font-size: 16px;
         line-height: 1.6;
     }
     
     h1 {
-        font-size: 28px;
-    }
-    
-    h2 {
         font-size: 24px;
     }
     
+    h2 {
+        font-size: 22px;
+    }
+    
     h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     p {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     
     .section-title {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-benefits {
+        gap: 15px;
+    }
+    
+    .problems-container,
+    .solution-diagram,
+    .solution-points,
+    .case-studies-container,
+    .services-container {
+        gap: 15px;
+    }
+    
+    .curriculum-months {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .month-item {
+        min-width: 100%;
     }
 }
 
-/* ハンバーガーメニュー */
-.hamburger-menu {
+/* モバイルメニュー用ハンバーガーアイコン */
+.mobile-menu-toggle {
     display: none;
     width: 30px;
-    height: 20px;
+    height: 21px;
     position: relative;
+    cursor: pointer;
+    z-index: 1001;
 }
 
-.hamburger-menu span {
+.mobile-menu-toggle span {
     display: block;
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #333;
+    background: var(--dark-color);
     border-radius: 3px;
     opacity: 1;
     left: 0;
@@ -234,176 +300,35 @@
     transition: .25s ease-in-out;
 }
 
-.hamburger-menu span:nth-child(1) {
+.mobile-menu-toggle span:nth-child(1) {
     top: 0px;
 }
 
-.hamburger-menu span:nth-child(2) {
-    top: 8px;
+.mobile-menu-toggle span:nth-child(2) {
+    top: 9px;
 }
 
-.hamburger-menu span:nth-child(3) {
-    top: 16px;
+.mobile-menu-toggle span:nth-child(3) {
+    top: 18px;
 }
 
-.hamburger-menu.active span:nth-child(1) {
-    top: 8px;
+.mobile-menu-toggle.active span:nth-child(1) {
+    top: 9px;
     transform: rotate(135deg);
 }
 
-.hamburger-menu.active span:nth-child(2) {
+.mobile-menu-toggle.active span:nth-child(2) {
     opacity: 0;
     left: -60px;
 }
 
-.hamburger-menu.active span:nth-child(3) {
-    top: 8px;
+.mobile-menu-toggle.active span:nth-child(3) {
+    top: 9px;
     transform: rotate(-135deg);
 }
 
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
+@media (min-width: 993px) {
+    .mobile-menu-toggle {
+        display: none;
     }
-}
-
-/* FAQ セクションのスタイル */
-.faq-section {
-    padding: 80px 0;
-    background-color: #f9f9f9;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 20px;
-    background-color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.faq-question:after {
-    content: '+';
-    font-size: 20px;
-}
-
-.faq-question.active:after {
-    content: '-';
-}
-
-.faq-answer {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    background-color: #f9f9f9;
-}
-
-.faq-answer.active {
-    padding: 20px;
-    max-height: 500px;
-}
-
-/* お問い合わせフォームのスタイル */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.form-group textarea {
-    height: 150px;
-}
-
-.form-submit-button {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.form-submit-button:hover {
-    background-color: #ff5252;
-}
-
-/* 料金プランのスタイル */
-.pricing-section {
-    padding: 80px 0;
-    background-color: #f9f9f9;
-}
-
-.pricing-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-}
-
-.pricing-card h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.pricing-card .price {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #ff6b6b;
-}
-
-.pricing-card .price span {
-    font-size: 16px;
-    color: #666;
-}
-
-.pricing-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-.pricing-card ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.pricing-card .cta-button {
-    display: inline-block;
-    width: 100%;
 }
