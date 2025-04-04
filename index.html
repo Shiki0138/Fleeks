@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fleeks - 美容師のためのインスタグラム集客戦略</title>
+    <meta name="description" content="月間55名の新規集客を実現する美容師のためのインスタグラム戦略。顧客心理に基づいた集客システムで、予約が取れない美容室へ。">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="Fleeks - 美容師のためのインスタグラム集客戦略">
+    <meta property="og:description" content="顧客心理に基づいた集客システムで、月間30名以上の新規客獲得を実現。75%の美容師が2ヶ月で成果を実感。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shiki0138.github.io/Fleeks/">
+    <meta property="og:image" content="https://shiki0138.github.io/Fleeks/images/ogp-image.webp">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="mobile_styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- form.run -->
+    <script src="https://js.form.run/js/v1/form.run.js"></script>
 </head>
 <body>
     <!-- ヘッダー -->
@@ -15,7 +38,9 @@
         <div class="container">
             <div class="header-inner">
                 <div class="logo">
-                    <a href="#">Fleeks</a>
+                    <a href="#">
+                        <img src="images/logo.webp" alt="Fleeks" width="120" height="40">
+                    </a>
                 </div>
                 <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                     <span></span>
@@ -24,12 +49,12 @@
                 </div>
                 <nav class="nav-menu" id="nav-menu">
                     <ul>
-                        <li><a href="#problem">課題</a></li>
-                        <li><a href="#solution">解決策</a></li>
-                        <li><a href="#success-stories">成功事例</a></li>
-                        <li><a href="#skills">学べるスキル</a></li>
-                        <li><a href="#pricing">料金</a></li>
-                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#problem" class="nav-link">課題</a></li>
+                        <li><a href="#solution" class="nav-link">解決策</a></li>
+                        <li><a href="#success-stories" class="nav-link">成功事例</a></li>
+                        <li><a href="#skills" class="nav-link">学べるスキル</a></li>
+                        <li><a href="#pricing" class="nav-link">料金</a></li>
+                        <li><a href="#faq" class="nav-link">よくある質問</a></li>
                     </ul>
                 </nav>
                 <div class="header-cta">
@@ -42,11 +67,11 @@
     <!-- ヒーローセクション -->
     <section class="hero" id="hero">
         <div class="container">
-            <h1 class="hero-title">月間55名の新規集客を実現する<br>美容師のためのインスタグラム戦略</h1>
-            <p class="hero-subtitle">顧客心理に基づいた集客システムで、予約が取れない美容室へ</p>
+            <h1 class="hero-title animate-fade-in">月間55名の新規集客を実現する<br>美容師のためのインスタグラム戦略</h1>
+            <p class="hero-subtitle animate-fade-in animate-delay-1">顧客心理に基づいた集客システムで、予約が取れない美容室へ</p>
             
             <div class="hero-benefits">
-                <div class="benefit-item">
+                <div class="benefit-item animate-fade-in animate-delay-2">
                     <div class="benefit-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -55,7 +80,7 @@
                         <p>2ヶ月で成果を実感</p>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-item animate-fade-in animate-delay-2">
                     <div class="benefit-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -64,7 +89,7 @@
                         <p>月間新規顧客獲得</p>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-item animate-fade-in animate-delay-2">
                     <div class="benefit-icon">
                         <i class="fas fa-redo"></i>
                     </div>
@@ -75,20 +100,20 @@
                 </div>
             </div>
             
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary btn-large">残り5名様：無料相談に申し込む <i class="fas fa-arrow-right"></i></a>
+            <div class="hero-cta animate-fade-in animate-delay-3">
+                <a href="#contact" class="btn btn-primary btn-large btn-pulse">残り5名様：無料相談に申し込む <i class="fas fa-arrow-right"></i></a>
                 <p class="trust-badge">安心の30日間返金保証付き</p>
             </div>
         </div>
     </section>
 
     <!-- 問題提起セクション -->
-    <section class="problems" id="problem">
+    <section class="problems section-padding" id="problem">
         <div class="container">
             <h2 class="section-title">なぜ多くの美容師はインスタグラムで成果が出ないのか？</h2>
             
             <div class="problems-container">
-                <div class="problem-item">
+                <div class="problem-item scroll-animate">
                     <div class="problem-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -96,7 +121,7 @@
                     <p>いいね数やフォロワー数は増えているのに、実際の予約や売上に結びつかず、時間と労力だけが消費されていませんか？</p>
                 </div>
                 
-                <div class="problem-item">
+                <div class="problem-item scroll-animate">
                     <div class="problem-icon">
                         <i class="fas fa-question-circle"></i>
                     </div>
@@ -104,7 +129,7 @@
                     <p>毎日の投稿内容に悩み、他のサロンの真似をしても反応がなく、効果的なコンテンツ戦略が立てられていませんか？</p>
                 </div>
                 
-                <div class="problem-item">
+                <div class="problem-item scroll-animate">
                     <div class="problem-icon">
                         <i class="fas fa-hourglass-half"></i>
                     </div>
@@ -113,33 +138,33 @@
                 </div>
             </div>
             
-            <div class="problems-question">
+            <div class="problems-question scroll-animate">
                 <p>このような悩みを抱えていませんか？</p>
             </div>
         </div>
     </section>
 
     <!-- 解決策セクション -->
-    <section class="solution" id="solution">
+    <section class="solution section-padding" id="solution">
         <div class="container">
             <h2 class="section-title">Fleeksが提供する解決策：顧客心理に基づく集客システム</h2>
             
             <div class="solution-diagram">
-                <div class="solution-element">
+                <div class="solution-element scroll-animate">
                     <div class="element-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>見込み客が反応するコンテンツ</h3>
                 </div>
                 
-                <div class="solution-element">
+                <div class="solution-element scroll-animate">
                     <div class="element-icon">
                         <i class="fas fa-comments"></i>
                     </div>
                     <h3>見込み客が期待するやり取り</h3>
                 </div>
                 
-                <div class="solution-element">
+                <div class="solution-element scroll-animate">
                     <div class="element-icon">
                         <i class="fas fa-brain"></i>
                     </div>
@@ -147,12 +172,12 @@
                 </div>
             </div>
             
-            <div class="solution-explanation">
+            <div class="solution-explanation scroll-animate">
                 <p>Fleeksでは「顧客心理」を理解した論理的なインスタグラム運用を学び、実践していただけます。</p>
             </div>
             
             <div class="solution-points">
-                <div class="solution-point">
+                <div class="solution-point scroll-animate">
                     <div class="point-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
@@ -162,7 +187,7 @@
                     </div>
                 </div>
                 
-                <div class="solution-point">
+                <div class="solution-point scroll-animate">
                     <div class="point-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
@@ -172,7 +197,7 @@
                     </div>
                 </div>
                 
-                <div class="solution-point">
+                <div class="solution-point scroll-animate">
                     <div class="point-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
@@ -183,21 +208,21 @@
                 </div>
             </div>
             
-            <div class="mid-cta">
+            <div class="mid-cta scroll-animate">
                 <a href="#contact" class="btn btn-primary btn-large">無料相談に申し込む <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
     <!-- 成功事例セクション -->
-    <section class="case-studies" id="success-stories">
+    <section class="case-studies section-padding" id="success-stories">
         <div class="container">
             <h2 class="section-title">実際に成果を出している美容師の声</h2>
             
             <div class="case-studies-container">
-                <div class="case-study-card">
+                <div class="case-study-card scroll-animate">
                     <div class="case-study-image">
-                        <img src="https://via.placeholder.com/300x150" alt="和田優希さん">
+                        <img src="images/case-study1.webp" alt="和田優希さん" width="300" height="150">
                     </div>
                     <div class="case-study-content">
                         <h3>1ヶ月で57名の新規客獲得</h3>
@@ -218,9 +243,9 @@
                     </div>
                 </div>
                 
-                <div class="case-study-card">
+                <div class="case-study-card scroll-animate">
                     <div class="case-study-image">
-                        <img src="https://via.placeholder.com/300x150" alt="永谷さん">
+                        <img src="images/case-study2.webp" alt="永谷さん" width="300" height="150">
                     </div>
                     <div class="case-study-content">
                         <h3>スタッフ単価が1.5倍にアップ</h3>
@@ -241,9 +266,9 @@
                     </div>
                 </div>
                 
-                <div class="case-study-card">
+                <div class="case-study-card scroll-animate">
                     <div class="case-study-image">
-                        <img src="https://via.placeholder.com/300x150" alt="田力優斗さん">
+                        <img src="images/case-study3.webp" alt="田力優斗さん" width="300" height="150">
                     </div>
                     <div class="case-study-content">
                         <h3>月間30名以上を6ヶ月継続</h3>
@@ -265,9 +290,9 @@
                 </div>
             </div>
             
-            <div class="success-stats">
+            <div class="success-stats scroll-animate">
                 <div class="stat-circle">
-                    <span class="stat-number">75%</span>
+                    <span class="stat-number counter-value" data-target="75">0</span><span>%</span>
                     <span class="stat-text">の方が2ヶ月で<br>成果を実感</span>
                 </div>
                 <ul class="stat-list">
@@ -281,14 +306,14 @@
     </section>
 
     <!-- 3つの集客スキルセクション -->
-    <section class="services" id="skills">
+    <section class="services section-padding" id="skills">
         <div class="container">
             <h2 class="section-title">Fleeksで学べる3つの集客スキル</h2>
             
             <div class="services-container">
-                <div class="service-card">
+                <div class="service-card scroll-animate hover-scale">
                     <div class="service-image">
-                        <img src="https://via.placeholder.com/300x200" alt="マーケティングスキル">
+                        <img src="images/skill-marketing.webp" alt="マーケティングスキル" width="300" height="200">
                     </div>
                     <div class="service-content">
                         <h3>マーケティングスキル</h3>
@@ -302,9 +327,9 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card scroll-animate hover-scale">
                     <div class="service-image">
-                        <img src="https://via.placeholder.com/300x200" alt="接客スキル">
+                        <img src="images/skill-psychology.webp" alt="接客スキル" width="300" height="200">
                     </div>
                     <div class="service-content">
                         <h3>接客スキル</h3>
@@ -318,9 +343,9 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card scroll-animate hover-scale">
                     <div class="service-image">
-                        <img src="https://via.placeholder.com/300x200" alt="ビジネス戦略スキル">
+                        <img src="images/skill-business.webp" alt="ビジネス戦略スキル" width="300" height="200">
                     </div>
                     <div class="service-content">
                         <h3>ビジネス戦略スキル</h3>
@@ -335,7 +360,7 @@
                 </div>
             </div>
             
-            <div class="curriculum">
+            <div class="curriculum scroll-animate">
                 <h3>2025年の配信予定コンテンツ</h3>
                 <div class="curriculum-months">
                     <div class="month-item">
@@ -396,43 +421,14 @@
         </div>
     </section>
 
-    <!-- 運営者紹介セクション -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">運営者紹介</h2>
-            
-            <div class="profile">
-                <div class="profile-image">
-                    <img src="https://via.placeholder.com/300x300" alt="プロフィール画像">
-                </div>
-                <div class="profile-content">
-                    <h3>山田太郎</h3>
-                    <p class="profile-title">Fleeks代表 / インスタグラム集客コンサルタント</p>
-                    <ul class="profile-achievements">
-                        <li><i class="fas fa-trophy"></i> 100サロン以上の集客支援実績</li>
-                        <li><i class="fas fa-trophy"></i> 平均月間新規客数30名以上の実績</li>
-                        <li><i class="fas fa-trophy"></i> 美容業界専門マーケティングアワード受賞</li>
-                    </ul>
-                    <p class="profile-story">
-                        元美容師として10年間の現場経験を活かし、インスタグラムを活用した集客に特化したコンサルティングを行っています。「技術があるのに集客で悩む美容師をゼロにする」をミッションに、全国の美容師さんをサポートしています。
-                    </p>
-                    <div class="profile-social">
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-instagram"></i> Instagram</a>
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-youtube"></i> YouTube</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 料金プランセクション -->
-    <section class="pricing" id="pricing">
+    <section class="pricing section-padding" id="pricing">
         <div class="container">
             <h2 class="section-title">料金プラン</h2>
             
-            <div class="pricing-card">
+            <div class="pricing-card scroll-animate">
                 <div class="pricing-image">
-                    <img src="https://via.placeholder.com/250x250" alt="メンバーシップ">
+                    <img src="images/pricing-image.webp" alt="メンバーシップ" width="250" height="250">
                 </div>
                 <div class="pricing-content">
                     <div class="pricing-header">
@@ -478,7 +474,7 @@
     </section>
 
     <!-- FAQセクション -->
-    <section class="faq" id="faq">
+    <section class="faq section-padding" id="faq">
         <div class="container">
             <h2 class="section-title">よくある質問</h2>
             
@@ -537,7 +533,7 @@
     </section>
 
     <!-- お問い合わせセクション -->
-    <section class="contact" id="contact">
+    <section class="contact section-padding" id="contact">
         <div class="container">
             <h2 class="section-title">無料相談に申し込む</h2>
             
@@ -546,62 +542,61 @@
                     <p>あなたのサロンに合わせた集客戦略をご提案します。<br>まずは無料相談でお気軽にご相談ください。</p>
                 </div>
                 
-                <form class="contact-form" id="contact-form" action="https://formspree.io/f/mbjnkyqy" method="POST">
-                    <input type="hidden" name="_subject" value="Fleeksへのお問い合わせ">
-                    <input type="hidden" name="_replyto" value="">
-                    <!-- FormspreeからGreenroom51@gmail.comに転送するための設定 -->
-                    <input type="hidden" name="_cc" value="greenroom51@gmail.com">
+                <!-- form.runを使用したフォーム -->
+                <form class="contact-form" action="https://form.run/api/v1/r/YOUR_FORM_RUN_ID" method="post">
+                    <!-- form.run必須の非表示フィールド -->
+                    <input type="hidden" name="_formrun_gotcha">
                     
                     <div class="form-group">
                         <label for="name">お名前 <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="お名前" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="salon">サロン名 <span class="required">*</span></label>
-                        <input type="text" id="salon" name="salon" required>
+                        <input type="text" id="salon" name="サロン名" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">メールアドレス <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="メールアドレス" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">電話番号 <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="電話番号" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="instagram">インスタグラムアカウント</label>
-                        <input type="text" id="instagram" name="instagram">
+                        <input type="text" id="instagram" name="Instagramアカウント">
                     </div>
                     
                     <div class="form-group">
                         <label for="message">ご相談内容</label>
-                        <textarea id="message" name="message"></textarea>
+                        <textarea id="message" name="ご相談内容"></textarea>
                     </div>
                     
                     <div class="form-group">
                         <label for="how">Fleeksをどこでお知りになりましたか？</label>
-                        <select id="how" name="how">
+                        <select id="how" name="お問い合わせ経路">
                             <option value="">選択してください</option>
-                            <option value="instagram">Instagram</option>
-                            <option value="facebook">Facebook</option>
-                            <option value="twitter">Twitter</option>
-                            <option value="friend">友人・知人の紹介</option>
-                            <option value="search">検索エンジン</option>
-                            <option value="other">その他</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="紹介">友人・知人の紹介</option>
+                            <option value="検索">検索エンジン</option>
+                            <option value="その他">その他</option>
                         </select>
                     </div>
                     
                     <div class="form-group checkbox">
-                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <input type="checkbox" id="privacy" name="プライバシーポリシー同意" value="同意する" required>
                         <label for="privacy">プライバシーポリシーに同意する <span class="required">*</span></label>
                     </div>
                     
                     <div class="form-submit">
-                        <button type="submit" class="btn btn-primary btn-large">無料相談を申し込む <i class="fas fa-arrow-right"></i></button>
+                        <button type="submit" class="btn btn-primary btn-large" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">無料相談を申し込む <i class="fas fa-arrow-right"></i></button>
                         <p class="form-note">※ 提出いただいた情報は、お問い合わせ対応のみに使用します。</p>
                     </div>
                 </form>
@@ -618,7 +613,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="#">Fleeks</a>
+                    <a href="#">
+                        <img src="images/logo-white.webp" alt="Fleeks" width="120" height="40">
+                    </a>
                     <p>美容師のためのインスタグラム集客戦略</p>
                 </div>
                 
@@ -645,7 +642,32 @@
         </div>
     </footer>
 
+    <!-- フローティングCTAボタン -->
+    <div class="floating-cta">
+        <a href="#contact" class="btn btn-primary btn-floating">
+            <span class="pulse-ring"></span>
+            無料相談に申し込む <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- 離脱防止ポップアップ -->
+    <div id="exit-intent-popup" class="exit-popup">
+        <div class="exit-popup-content">
+            <button class="close-popup">&times;</button>
+            <h3>待ってください！</h3>
+            <p>今なら<strong>特別PDF</strong>「インスタグラム集客成功事例10選」を無料プレゼント中です。</p>
+            <form class="mini-form" action="https://form.run/api/v1/r/YOUR_FORM_RUN_ID_FOR_PDF" method="post">
+                <input type="hidden" name="_formrun_gotcha">
+                <input type="email" name="メールアドレス" placeholder="メールアドレス" required>
+                <input type="hidden" name="フォーム種類" value="PDF申し込み">
+                <button type="submit" class="btn btn-secondary">PDFを受け取る</button>
+            </form>
+        </div>
+    </div>
+
     <!-- スクリプト -->
-    <script src="./main.js"></script>
+    <script src="main.js"></script>
+    <script src="animation.js"></script>
+    <script src="optimize.js"></script>
 </body>
 </html>
