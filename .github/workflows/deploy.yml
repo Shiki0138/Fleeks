@@ -29,6 +29,16 @@ jobs:
         cd fleeks-react
         npm run build
     
+    - name: Debug FTP Connection
+      run: |
+        echo "Testing FTP connection..."
+        echo "Server: ${{ secrets.FTP_SERVER }}"
+        echo "Username length: ${#USERNAME}"
+        echo "Password length: ${#PASSWORD}"
+      env:
+        USERNAME: ${{ secrets.FTP_USERNAME }}
+        PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    
     - name: Deploy to X-Server via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -36,9 +46,10 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        protocol: ftp
+        protocol: ftps
         local-dir: ./
         server-dir: ./
+        "dangerous-clean-slate": false
         exclude: |
           **/.git*
           **/.git*/**
