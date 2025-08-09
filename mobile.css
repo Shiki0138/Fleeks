@@ -1,0 +1,384 @@
+/* モバイル対応スタイル */
+
+/* 大型タブレット - 992px以下 */
+@media (max-width: 992px) {
+    :root {
+        --font-xl: 2.2rem;
+        --font-lg: 1.8rem;
+        --font-md: 1.3rem;
+        --spacing-xl: 3.5rem;
+        --spacing-lg: 2.5rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 60px);
+        background-color: var(--white-color);
+        flex-direction: column;
+        padding: var(--spacing-md);
+        transition: left var(--transition-normal);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+    }
+    
+    .nav-menu li {
+        margin: 0 0 var(--spacing-sm) 0;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        z-index: 101;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .header-cta {
+        display: none;
+    }
+    
+    .hero {
+        padding-top: calc(var(--spacing-xl) * 1.5);
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .floating-cta {
+        display: block;
+    }
+}
+
+/* タブレット - 768px以下 */
+@media (max-width: 768px) {
+    :root {
+        --font-xl: 2rem;
+        --font-lg: 1.6rem;
+        --font-md: 1.2rem;
+        --spacing-xl: 3rem;
+        --spacing-lg: 2rem;
+    }
+    
+    .section-padding {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .benefit-item,
+    .problem-item,
+    .solution-element,
+    .solution-point,
+    .case-study-card,
+    .service-card {
+        min-width: 100%;
+    }
+    
+    .hero-benefits,
+    .problems-container,
+    .solution-diagram,
+    .solution-points,
+    .case-studies-container,
+    .services-container {
+        gap: var(--spacing-sm);
+    }
+    
+    .profile,
+    .pricing-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image,
+    .pricing-image {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .solution-point {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .pricing-features ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-features li {
+        justify-content: flex-start;
+    }
+    
+    .success-stats {
+        flex-direction: column;
+    }
+    
+    .stat-circle {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .btn-floating {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+    
+    .curriculum-months {
+        gap: var(--spacing-xs);
+    }
+    
+    .month-item {
+        padding: var(--spacing-xs) 5px;
+        min-width: 135px;
+    }
+    
+    .exit-popup-content {
+        padding: 20px;
+    }
+    
+    .mini-form {
+        flex-direction: column;
+    }
+    
+    .mini-form input,
+    .mini-form button {
+        width: 100%;
+    }
+    
+    /* タップしやすいボタンサイズの確保 */
+    .btn {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        padding: 12px;
+        font-size: 16px; /* iOS自動ズーム防止 */
+    }
+    
+    .form-submit button {
+        width: 100%;
+    }
+}
+
+/* スマートフォン - 576px以下 */
+@media (max-width: 576px) {
+    :root {
+        --font-xl: 1.8rem;
+        --font-lg: 1.4rem;
+        --font-md: 1.1rem;
+        --spacing-xl: 2.5rem;
+        --spacing-lg: 1.5rem;
+    }
+    
+    .section-title {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .benefit-item {
+        padding: var(--spacing-xs);
+    }
+    
+    .benefit-icon {
+        font-size: var(--font-md);
+    }
+    
+    .benefit-text h3 {
+        font-size: var(--font-sm);
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .hero-cta {
+        margin-top: var(--spacing-md);
+    }
+    
+    .btn-large {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 14px;
+    }
+    
+    .solution-point {
+        padding: 0;
+    }
+    
+    .case-study-content,
+    .service-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .faq-question h3 {
+        font-size: 0.9rem;
+    }
+    
+    .testimonial {
+        font-size: 0.9rem;
+    }
+    
+    .pricing-description,
+    .special-reason {
+        font-size: 0.9rem;
+    }
+    
+    .contact-form {
+        padding: var(--spacing-sm);
+    }
+    
+    .floating-cta {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* 小型スマートフォン - 375px以下 */
+@media (max-width: 375px) {
+    :root {
+        --font-xl: 1.6rem;
+        --font-lg: 1.3rem;
+        --font-md: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .btn-large {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+    
+    .problem-item h3,
+    .solution-element h3,
+    .point-text h3,
+    .service-content h3 {
+        font-size: 1rem;
+    }
+    
+    .pricing-special .special-note {
+        font-size: 1.1rem;
+    }
+    
+    .current-price {
+        font-size: 1rem;
+    }
+    
+    .price-value {
+        font-size: 1.3rem;
+    }
+    
+    .stat-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .stat-number {
+        font-size: 1.3rem;
+    }
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--gray-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dark-color);
+}
+
+/* フォーム送信時のスタイル */
+.formrun-has-error input,
+.formrun-has-error textarea,
+.formrun-has-error select {
+    border-color: #ff0000;
+}
+
+.formrun-error-text {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* プリント用スタイル */
+@media print {
+    .header, .hero-cta, .mid-cta, .pricing-cta, .contact, .footer, .floating-cta, .exit-popup {
+        display: none !important;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+        font-size: 12pt;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .case-study-card, .problem-item, .service-card, .pricing-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .section-title {
+        font-size: 16pt;
+        margin-top: 20px;
+    }
+}

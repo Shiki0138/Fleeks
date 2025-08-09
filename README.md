@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fleeks - 高成約率ランディングページ
 
 ## 概要
@@ -38,3 +39,6 @@ npx http-server
 - お問い合わせフォームの実装
 - Google Analytics等の分析ツール導入
 - A/Bテストの実施
+=======
+# Fleeks
+>>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
