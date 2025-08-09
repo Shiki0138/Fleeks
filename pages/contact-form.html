@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申込フォーム埋め込み用コード</title>
+</head>
+<body>
+    <!-- オプション1: カスタムHTMLフォーム（GAS連携） -->
+    <div id="custom-form-option">
+        <h2>オプション1: カスタムフォーム</h2>
+        <p>以下のコードを、index.htmlの申込ボタンがある箇所に追加してください。</p>
+        
+        <pre><code>
+<!-- 申込フォームモーダル -->
+<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>無料相談申込フォーム</h2>
+        <form id="contact-form" class="application-form">
+            <div class="form-group">
+                <label for="name">お名前 <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="salon">サロン名/フリーランス</label>
+                <input type="text" id="salon" name="salon">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">メールアドレス <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">電話番号 <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="instagram">Instagramアカウント</label>
+                <input type="text" id="instagram" name="instagram" placeholder="@username">
+            </div>
+            
+            <div class="form-group">
+                <label for="concern">現在の悩み・相談したいこと <span class="required">*</span></label>
+                <textarea id="concern" name="concern" rows="4" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="agreement" required>
+                    <span>プライバシーポリシーに同意する</span>
+                </label>
+            </div>
+            
+            <button type="submit" class="submit-button">
+                <span>送信する</span>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+            
+            <p class="form-note">
+                <i class="fas fa-lock"></i>
+                SSL暗号化通信で安全に送信されます
+            </p>
+        </form>
+    </div>
+</div>
+
+<!-- フォーム用CSS（styles.cssに追加） -->
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: var(--bg-section);
+    margin: 5% auto;
+    padding: 40px;
+    border: 2px solid var(--accent-gold);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    color: var(--text-gray);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: var(--accent-gold);
+}
+
+.application-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-light);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 16px;
+    transition: all var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.required {
+    color: var(--danger-red);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: var(--primary-navy);
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all var(--transition-fast);
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 30px 20px;
+        margin: 10% auto;
+    }
+}
+</style>
+
+<!-- フォーム用JavaScript（scripts.jsに追加） -->
+<script>
+// モーダル制御
+const modal = document.getElementById('contact-modal');
+const ctaButtons = document.querySelectorAll('.cta-button');
+const closeBtn = document.querySelector('.close');
+
+// CTAボタンクリックでモーダル表示
+ctaButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        if (button.href && button.href.includes('#')) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            
+            // GTMイベント
+            dataLayer.push({
+                'event': 'open_form',
+                'form_type': 'contact'
+            });
+        }
+    });
+});
+
+// 閉じるボタン
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// モーダル外クリックで閉じる
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// フォーム送信処理
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitButton = e.target.querySelector('.submit-button');
+    const originalText = submitButton.innerHTML;
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+    submitButton.disabled = true;
+    
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
+    // GTMイベント
+    dataLayer.push({
+        'event': 'form_submit',
+        'form_type': 'contact'
+    });
+    
+    // Facebook Pixelイベント
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', {
+            content_name: 'Fleeks Application',
+            value: 7980,
+            currency: 'JPY'
+        });
+    }
+    
+    // Google Apps Script URL（実際のURLに置き換えてください）
+    const GAS_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+    
+    try {
+        await fetch(GAS_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'text/plain',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        // 成功メッセージ
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div style="text-align: center; padding: 40px;">
+                    <i class="fas fa-check-circle" style="font-size: 64px; color: var(--success-green); margin-bottom: 24px;"></i>
+                    <h2 style="margin-bottom: 16px;">送信完了しました</h2>
+                    <p style="color: var(--text-gray); margin-bottom: 24px;">
+                        お申込みありがとうございます。<br>
+                        24時間以内に担当者よりご連絡いたします。
+                    </p>
+                    <button onclick="location.reload()" class="cta-button">
+                        ページを更新
+                    </button>
+                </div>
+            </div>
+        `;
+        
+    } catch (error) {
+        console.error('Error:', error);
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+        alert('送信に失敗しました。お手数ですが、もう一度お試しください。');
+    }
+});
+</script>
+        </code></pre>
+    </div>
+
+    <hr>
+
+    <!-- オプション2: formrun -->
+    <div id="formrun-option">
+        <h2>オプション2: formrun（推奨）</h2>
+        <p>formrunを使用する場合は、以下の手順で実装してください。</p>
+        
+        <ol>
+            <li><a href="https://form.run/ja" target="_blank">formrun</a>にアクセスしてアカウント作成</li>
+            <li>新規フォーム作成</li>
+            <li>必要な項目を設定（名前、メールアドレス、電話番号、相談内容など）</li>
+            <li>「フォーム設定」→「埋め込み」から埋め込みコードを取得</li>
+            <li>以下の場所に埋め込みコードを追加：</li>
+        </ol>
+        
+        <pre><code>
+<!-- CTAボタンの代わりに以下を配置 -->
+<div class="formrun-embed" data-formrun-form="@YOUR_FORM_ID" data-formrun-redirect="true">
+    <script src="https://sdk.run/v1/formrun.js"></script>
+</div>
+
+<!-- または、モーダルとして表示する場合 -->
+<a href="#" class="cta-button" data-formrun-form="@YOUR_FORM_ID" data-formrun-modal>
+    <span>無料で相談する</span>
+    <i class="fas fa-arrow-right"></i>
+</a>
+<script src="https://sdk.run/v1/formrun.js"></script>
+        </code></pre>
+    </div>
+
+    <hr>
+
+    <!-- オプション3: Typeform -->
+    <div id="typeform-option">
+        <h2>オプション3: Typeform</h2>
+        <p>よりインタラクティブなフォーム体験を提供したい場合</p>
+        
+        <pre><code>
+<!-- Typeformボタン -->
+<a class="cta-button" data-tf-popup="YOUR_FORM_ID" data-tf-size="100">
+    <span>無料で相談する</span>
+    <i class="fas fa-arrow-right"></i>
+</a>
+<script src="//embed.typeform.com/next/embed.js"></script>
+        </code></pre>
+    </div>
+
+    <hr>
+
+    <!-- Google Apps Script サンプル -->
+    <div id="gas-sample">
+        <h2>Google Apps Script（GAS）サンプルコード</h2>
+        <p>オプション1のカスタムフォームを使用する場合のGASコード</p>
+        
+        <pre><code>
+// Google Apps Script (GAS)
+function doPost(e) {
+  try {
+    // リクエストデータを取得
+    const data = JSON.parse(e.postData.contents);
+    
+    // スプレッドシートに記録
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    sheet.appendRow([
+      new Date(),
+      data.name,
+      data.salon,
+      data.email,
+      data.phone,
+      data.instagram,
+      data.concern
+    ]);
+    
+    // メール送信（申込者へ）
+    const userMailBody = `
+${data.name} 様
+
+この度は、Fleeksへのお申込みありがとうございます。
+以下の内容で受け付けました。
+
+【お申込み内容】
+お名前: ${data.name}
+サロン名: ${data.salon || '未記入'}
+メールアドレス: ${data.email}
+電話番号: ${data.phone}
+Instagram: ${data.instagram || '未記入'}
+ご相談内容: ${data.concern}
+
+24時間以内に担当者よりご連絡いたします。
+今しばらくお待ちください。
+
+━━━━━━━━━━━━━━━━━━
+Fleeks - 美容師のためのInstagram集客マスタリー
+https://www.shiki-stagram.com
+━━━━━━━━━━━━━━━━━━
+`;
+    
+    GmailApp.sendEmail(
+      data.email,
+      '【Fleeks】お申込みありがとうございます',
+      userMailBody
+    );
+    
+    // メール送信（管理者へ）
+    const adminMailBody = `
+新規申込みがありました。
+
+【申込者情報】
+日時: ${new Date()}
+お名前: ${data.name}
+サロン名: ${data.salon || '未記入'}
+メールアドレス: ${data.email}
+電話番号: ${data.phone}
+Instagram: ${data.instagram || '未記入'}
+ご相談内容: ${data.concern}
+
+スプレッドシート:
+https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID
+`;
+    
+    GmailApp.sendEmail(
+      'admin@example.com', // 管理者メールアドレス
+      '【Fleeks】新規申込み通知',
+      adminMailBody
+    );
+    
+    return ContentService.createTextOutput('Success');
+    
+  } catch (error) {
+    console.error(error);
+    return ContentService.createTextOutput('Error');
+  }
+}
+
+// GETリクエスト（テスト用）
+function doGet() {
+  return ContentService.createTextOutput('Fleeks Form API');
+}
+        </code></pre>
+        
+        <h3>GASの設定手順</h3>
+        <ol>
+            <li>Google スプレッドシートを新規作成</li>
+            <li>拡張機能 → Apps Script を開く</li>
+            <li>上記コードを貼り付け</li>
+            <li>デプロイ → 新しいデプロイ</li>
+            <li>種類: ウェブアプリ</li>
+            <li>アクセスできるユーザー: 全員</li>
+            <li>デプロイ後のURLをフォームのGAS_URLに設定</li>
+        </ol>
+    </div>
+</body>
+</html>

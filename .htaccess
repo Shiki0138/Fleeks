@@ -1,0 +1,135 @@
+# Fleeks .htaccess設定ファイル
+
+# 文字エンコーディング設定
+AddDefaultCharset UTF-8
+
+# セキュリティ設定
+<IfModule mod_headers.c>
+    # XSS対策
+    Header set X-XSS-Protection "1; mode=block"
+    # クリックジャッキング対策
+    Header always append X-Frame-Options SAMEORIGIN
+    # コンテンツタイプ推測無効化
+    Header set X-Content-Type-Options nosniff
+    # HSTS（HTTPSの強制）
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# URL書き換えエンジン有効化
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # HTTPSへのリダイレクト
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # wwwありなしの統一（wwwなしに統一）
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    
+    # index.htmlを省略したURLへのアクセス対応
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.html[\s?] [NC]
+    RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+    
+    # 拡張子なしでアクセス可能に
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+    
+    # 404エラーページ（必要に応じて作成）
+    ErrorDocument 404 /404.html
+</IfModule>
+
+# キャッシュ設定
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # デフォルト
+    ExpiresDefault "access plus 1 month"
+    
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+    
+    # CSS/JavaScript
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/x-javascript "access plus 1 week"
+    
+    # 画像
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    
+    # フォント
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+# Gzip圧縮
+<IfModule mod_deflate.c>
+    # テキストファイルの圧縮
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    
+    # 古いブラウザ対策
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+# ファイルアクセス制限
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|bak|config)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# ディレクトリ一覧表示の無効化
+Options -Indexes
+
+# ETags無効化（キャッシュ制御の改善）
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# 画像ホットリンク対策（必要に応じて有効化）
+# <IfModule mod_rewrite.c>
+#     RewriteCond %{HTTP_REFERER} !^$
+#     RewriteCond %{HTTP_REFERER} !^https?://(www\.)?shiki-stagram\.com [NC]
+#     RewriteRule \.(jpg|jpeg|png|gif|svg|webp)$ - [F,NC,L]
+# </IfModule>
+
+# カスタムエラーページ（必要に応じて作成）
+# ErrorDocument 403 /403.html
+# ErrorDocument 500 /500.html
+
+# パフォーマンス最適化
+<IfModule mod_headers.c>
+    # Keep-Alive有効化
+    Header set Connection keep-alive
+</IfModule>
+
+# 旧URLからのリダイレクト（Wixから移行時に必要な場合）
+# 例：
+# Redirect 301 /old-page https://www.shiki-stagram.com/new-page
+
+# 特定のIPアドレスからのアクセス制限（必要に応じて）
+# <RequireAll>
+#     Require all granted
+#     Require not ip 123.456.789.000
+# </RequireAll>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特定商取引法に基づく表記</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .tokusho-content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .business-info {
+            border-bottom: 1px solid #e9ecef;
+            padding: 25px 0;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        .business-info:last-child {
+            border-bottom: none;
+        }
+        
+        .business-info h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #495057;
+            margin: 0;
+            background: #f8f9fa;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .business-info p {
+            font-size: 1rem;
+            color: #212529;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+            margin-top: 40px;
+        }
+        
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1rem;
+            }
+            
+            .tokusho-content {
+                padding: 25px 20px;
+                margin: 0 10px 40px;
+            }
+            
+            .business-info {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 20px 0;
+            }
+            
+            .business-info h2 {
+                font-size: 1rem;
+                padding: 10px 14px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 40px 0;
+            }
+            
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .tokusho-content {
+                margin: 0 5px 40px;
+                padding: 20px 15px;
+            }
+            
+            .business-info {
+                padding: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="company-logo">L5</div>
+            <h1>特定商取引法に基づく表記</h1>
+            <p class="header-subtitle">Specific Commercial Transaction Act</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <main>
+            <section class="tokusho-content">
+                <div class="business-info">
+                    <h2>販売事業者</h2>
+                    <p>合同会社Leadfive</p>
+                </div>
+                
+                <div class="business-info">
+                    <h2>運営統括責任者</h2>
+                    <p>山下　公一</p>
+                </div>
+                
+                <div class="business-info">
+                    <h2>所在地</h2>
+                    <p>〒530−0001<br>
+                    大阪府大阪市北区梅田1−13−1 大阪梅田ツインタワーズ・サウス15F</p>
+                </div>
+                
+                <div class="business-info">
+                    <h2>電話番号</h2>
+                    <div class="contact-info">
+                        <p><a href="tel:06-7713-6747">06-7713-6747</a></p>
+                        <small>営業時間: 平日 9:00-18:00</small>
+                    </div>
+                </div>
+                
+                <div class="business-info">
+                    <h2>メールアドレス</h2>
+                    <div class="contact-info">
+                        <p><a href="mailto:leadfive.138@gmail.com">leadfive.138@gmail.com</a></p>
+                        <small>お問い合わせは24時間受付</small>
+                    </div>
+                </div>
+                
+                <div class="business-info">
+                    <h2>販売価格と配送料</h2>
+                    <p>販売価格はウェブサイトに表示された金額（表示価格/消費税込）をご参照ください。</p>
+                </div>
+                
+                <div class="business-info">
+                    <h2>追加手数料等の追加料金</h2>
+                    <p>なし。ただし、振り込み対応が必要な際の送金手数料はお客様ご負担となります。</p>
+                </div>
+                
+                <div class="business-info">
+                    <h2>お支払い時期と方法</h2>
+                    <p>エントリーフォームからのお申込み後48時間以内に、指定アドレスに決済メールを送信いたします。なお、お支払いにはクレジットカード、PayPalをご利用いただけます。</p>
+                </div>
+                
+                <div class="business-info">
+                    <h2>商品の引き渡し時</h2>
+                    <p>ご注文の確定後、3日以内にご入会のご案内をインスタグラムDMにてご連絡いたします。</p>
+                </div>
+                
+                <div class="business-info">
+                    <h2>返品・返金規約</h2>
+                    <p>原則として返品や支払い後のキャンセルは受け付けておりません。個別のご相談は上記メールアドレスよりご連絡ください。</p>
+                </div>
+                
+                <div class="business-info">
+                    <h2>定期課金時の解約方法</h2>
+                    <p>定期課金時の解約方法については、決済日の前々日までにインスタグラムDMもしくはメールにてご連絡ください。<br>
+                    期限までにご連絡いただいた方は、次回決済より課金を停止いたします。<br>
+                    万が一、請求停止が間に合わなかった場合は、別途返金いたします。</p>
+                </div>
+            </section>
+        </main>
+        
+        <div class="footer">
+            <p>&copy; 2024 合同会社Leadfive. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">本サイトは特定商取引法に基づき適切に運営されています。</p>
+        </div>
+    </div>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "r97sljvec6");
+    </script>
+    
+    <!-- ヒートマップトラッキング -->
+    <script src="../heatmap-tracker.js"></script>
+    <script src="../scripts.js"></script>
+</body>
+</html>
