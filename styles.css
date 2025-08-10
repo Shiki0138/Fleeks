@@ -25,6 +25,20 @@
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
+    
+    /* Additional variables for mobile.css compatibility */
+    --dark-color: #1a1a1a;
+    --gray-color: #666666;
+    --white-color: #ffffff;
+    --font-xl: 3rem;
+    --font-lg: 2.5rem;
+    --font-md: 1.5rem;
+    --font-sm: 1rem;
+    --spacing-xl: 4rem;
+    --spacing-lg: 3rem;
+    --spacing-md: 2rem;
+    --spacing-sm: 1rem;
+    --spacing-xs: 0.5rem;
 }
 
 /* Base Styles */
@@ -46,6 +60,89 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: var(--transition-normal);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.nav-menu a:hover {
+    color: var(--accent-gold);
+}
+
+.header-cta {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition-normal);
+}
+
+.header-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: var(--transition-fast);
 }
 
 /* Typography */
@@ -90,6 +187,7 @@ h6 { font-size: 1rem; }
     justify-content: center;
     background-color: #000;
     overflow: hidden;
+    padding-top: 80px; /* Header space */
 }
 
 .hero-bg {
@@ -172,6 +270,130 @@ h6 { font-size: 1rem; }
 .cta-button.large {
     padding: 20px 50px;
     font-size: 1.25rem;
+}
+
+/* Social Proof Section */
+.social-proof {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.testimonial-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-meta h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.testimonial-meta p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.testimonial-content {
+    margin-bottom: 20px;
+}
+
+.testimonial-stats {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Problem Solution Section */
+.problem-solution {
+    padding: 80px 0;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.problem-card {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-normal);
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.problem-card:hover .problem-icon {
+    color: var(--white);
+}
+
+.problem-icon {
+    font-size: 3rem;
+    color: var(--error);
+    margin-bottom: 20px;
+}
+
+.problem-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
 }
 
 /* Pricing Section */
