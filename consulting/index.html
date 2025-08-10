@@ -993,7 +993,7 @@
                     </div>
                 </div>
                 
-                <a href="javascript:void(0)" class="cta-button" onclick="openModal()">
+                <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" class="cta-button">
                     無料経営診断を受ける
                     <span class="cta-subtext">3分で完了・即日結果をお届け</span>
                 </a>
@@ -1206,52 +1206,50 @@
             <button class="close-modal" onclick="closeModal()">&times;</button>
             <h2 class="form-title">無料経営診断のお申し込み</h2>
             
-            <form id="consultingForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfrDmvMTBLYWdZtyTgw7xB68tu0Uk6ETvbooY-ZsoCSE2q80Q/formResponse" method="POST" target="hidden_iframe">
+            <form id="consultingForm" action="YOUR_GOOGLE_FORM_ACTION_URL" method="POST" target="hidden_iframe">
                 <div class="form-group">
                     <label for="name">お名前 <span class="required">*</span></label>
-                    <input type="text" id="name" name="entry.1234567890" required>
+                    <input type="text" id="name" name="entry.XXXXXXXXX" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="salon">サロン名 <span class="required">*</span></label>
-                    <input type="text" id="salon" name="entry.0987654321" required>
+                    <label for="company">会社名</label>
+                    <input type="text" id="company" name="entry.XXXXXXXXX">
                 </div>
                 
                 <div class="form-group">
                     <label for="email">メールアドレス <span class="required">*</span></label>
-                    <input type="email" id="email" name="entry.1122334455" required>
+                    <input type="email" id="email" name="entry.XXXXXXXXX" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="phone">電話番号 <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="entry.5544332211" required>
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="entry.XXXXXXXXX">
                 </div>
                 
                 <div class="form-group">
-                    <label for="staff">スタッフ数</label>
-                    <select id="staff" name="entry.9988776655">
+                    <label for="membership">Fleeksメンバーシップ <span class="required">*</span></label>
+                    <select id="membership" name="entry.XXXXXXXXX" required>
                         <option value="">選択してください</option>
-                        <option value="1-3名">1-3名</option>
-                        <option value="4-6名">4-6名</option>
-                        <option value="7-10名">7-10名</option>
-                        <option value="11名以上">11名以上</option>
+                        <option value="Fleeksメンバー">Fleeksメンバー</option>
+                        <option value="メンバーではない">メンバーではない</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="concern">現在の経営課題 <span class="required">*</span></label>
-                    <textarea id="concern" name="entry.6677889900" required placeholder="現在抱えている経営上の課題や悩みをお聞かせください"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="plan">ご希望のプラン</label>
-                    <select id="plan" name="entry.3344556677">
+                    <label for="service">ご検討中のサービス <span class="required">*</span></label>
+                    <select id="service" name="entry.XXXXXXXXX" required>
                         <option value="">選択してください</option>
-                        <option value="Fleeks（オンラインサロン）">Fleeks（オンラインサロン）</option>
                         <option value="個別コンサルティング">個別コンサルティング</option>
+                        <option value="Fleeks（オンラインサロン）">Fleeks（オンラインサロン）</option>
                         <option value="経営コンサル＋DX">経営コンサル＋DX</option>
-                        <option value="未定">まだ決めていない</option>
+                        <option value="その他">その他</option>
                     </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+                    <textarea id="message" name="entry.XXXXXXXXX" required placeholder="お問い合わせ内容をご記入ください"></textarea>
                 </div>
                 
                 <button type="submit" class="form-submit">送信する</button>
