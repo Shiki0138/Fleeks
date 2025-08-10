@@ -113,6 +113,42 @@ body {
         --font-md: 1.2rem;
         --spacing-xl: 3rem;
         --spacing-lg: 2rem;
+        --primary-dark: #0a1628;
+        --secondary-color: #d4af37;
+        --white-color: #ffffff;
+        --gray-color: #666;
+        --dark-color: #333;
+        --success-color: #00d4aa;
+    }
+    
+    /* コンサルティングセクションのモバイル対応 */
+    .consulting-intro {
+        padding: 30px 0;
+        background-color: var(--bg-section, #0f1823);
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .consulting-content {
+        padding: 0 20px;
+    }
+    
+    .consulting-content h3 {
+        font-size: 1.2rem;
+        color: var(--text-light, #ffffff);
+        margin-bottom: 12px;
+    }
+    
+    .consulting-content p {
+        color: var(--text-gray, #a0a9b8);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+    
+    .consulting-note {
+        font-size: 0.8rem !important;
+        color: var(--text-gray, #a0a9b8) !important;
+        margin-top: 8px !important;
     }
     
     .section-padding {
@@ -300,8 +336,18 @@ body {
         padding: var(--spacing-sm);
     }
     
-    .faq-question h3 {
-        font-size: 0.9rem;
+    .faq-question {
+        font-size: 0.9rem !important;
+        padding: 18px 15px !important;
+    }
+    
+    .faq-answer p {
+        padding: 0 15px 18px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .faq-question span {
+        font-size: 0.9rem !important;
     }
     
     .testimonial {

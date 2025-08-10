@@ -96,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', highlightNavigation);
     highlightNavigation(); // 初期状態でもハイライト
     
-    // FAQアコーディオン
+    // FAQアコーディオン（scripts.jsで実装済みのため、重複を避けてコメントアウト）
+    /*
     const faqItems = document.querySelectorAll('.faq-item');
     
     faqItems.forEach(item => {
@@ -131,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+    */
     
     // フローティングCTAボタンの表示制御
     const floatingCta = document.querySelector('.floating-cta');

@@ -52,24 +52,35 @@ function initScrollAnimations() {
 
 // FAQ Accordion
 function initFAQ() {
+    console.log('Initializing FAQ...');
     const faqItems = document.querySelectorAll('.faq-item');
+    console.log('Found FAQ items:', faqItems.length);
     
-    faqItems.forEach(item => {
+    faqItems.forEach((item, index) => {
         const question = item.querySelector('.faq-question');
         
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all items
-            faqItems.forEach(faq => {
-                faq.classList.remove('active');
+        if (question) {
+            console.log('Adding event listener to FAQ item', index);
+            question.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('FAQ item clicked:', index);
+                
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                faqItems.forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    console.log('FAQ item opened:', index);
+                }
             });
-            
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
+        } else {
+            console.warn('FAQ question button not found for item', index);
+        }
     });
 }
 
