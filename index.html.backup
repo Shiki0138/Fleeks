@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleeks - 美容師のためのInstagram集客マスタリー</title>
+    <meta name="description" content="ホットペッパー広告費に頼らず、Instagramで安定集客。美容師・サロンオーナーのための実践型オンラインサロン">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5H6P7TG');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "r97sljvec6");
+    
+    // Clarityカスタムイベント設定
+    window.addEventListener('load', function() {
+        // ヒートマップ用のカスタムイベント
+        clarity('set', 'page_type', 'landing_page');
+        clarity('set', 'user_segment', 'beauty_professional');
+        
+        // 重要なCTAボタンのクリック追跡
+        document.querySelectorAll('.cta-button').forEach(function(button, index) {
+            button.addEventListener('click', function() {
+                clarity('event', 'cta_click', {
+                    button_position: index + 1,
+                    button_text: this.textContent.trim(),
+                    section: this.closest('section')?.id || 'unknown'
+                });
+            });
+        });
+        
+        // スクロール深度の追跡
+        let maxScroll = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                if (maxScroll % 25 === 0) { // 25%, 50%, 75%, 100%で記録
+                    clarity('event', 'scroll_depth', { percent: maxScroll });
+                }
+            }
+        });
+    });
+    </script>
+    <!-- End Microsoft Clarity -->
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3177657632490430');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3177657632490430&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H6P7TG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="futuristic-bg">
+                <div class="light-beam light-beam-1"></div>
+                <div class="light-beam light-beam-2"></div>
+                <div class="light-beam light-beam-3"></div>
+                <div class="geometric-shape shape-1"></div>
+                <div class="geometric-shape shape-2"></div>
+                <div class="geometric-shape shape-3"></div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-element" data-speed="0.5">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="floating-element" data-speed="0.8">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="floating-element" data-speed="0.3">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="floating-element" data-speed="0.6">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge pulse">
+                    <i class="fas fa-crown"></i>
+                    <span>300名突破</span>
+                    <div class="badge-glow"></div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">投稿しても集客できない...</span>
+                    <span class="highlight">その悩み、解決します。</span>
+                </h1>
+                <p class="hero-subtitle">
+                    効果実証済みのInstagram集客メソッドで
+                    <span class="mobile-break">高額広告に頼らず、</span>高単価顧客を獲得し続ける美容師に
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">0→27人</div>
+                        <div class="stat-label">入会後の集客実績</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">2ヶ月以内成果達成率</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">433%</div>
+                        <div class="stat-label">売上率UP（最高）</div>
+                    </div>
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrDmvMTBLYWdZtyTgw7xB68tu0Uk6ETvbooY-ZsoCSE2q80Q/viewform?usp=sf_link" target="_blank" class="cta-button primary">
+                    <span>今すぐエントリーする</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <p class="hero-note">
+                    <i class="fas fa-shield-alt"></i>
+                    解約はDM一本でOK・リスクなし
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section id="social-proof" class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">RESULTS</span>
+                <h2 class="section-title">
+                    メンバーの<span class="gradient-text">圧倒的な成果</span>
+                </h2>
+                <p class="section-subtitle">
+                    全国の美容師が実践し、確実に結果を出しています
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>和田優希さん（ママ美容師）</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-result">
+                        <span class="before">入会前: 月0人</span>
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="after">入会後: 月27人</span>
+                    </div>
+                    <p class="testimonial-text">
+                        インスタ集客できるようになったおかげで、独立できたし、リピート率と新規客数が大幅にあがって驚いています。
+                    </p>
+                </div>
+
+                <div class="testimonial-card featured">
+                    <div class="testimonial-header">
+                        <div class="testimonial-icon featured-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>NATSUKIさん（髪質改善特化）</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-result">
+                        <span class="before">月収: 初月48万円</span>
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="after">最高208万円</span>
+                    </div>
+                    <p class="testimonial-text">
+                        年平均売上で150万達成できたし店販も0円→30万円に。広告のPDCAサイクル、カウンセリングの見直し、店販を動画のPOPを作成してお客様に見せるだけで売上が倍になった
+                    </p>
+                    <div class="featured-badge">BEST RESULT</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>斎藤弘之さん（ロングヘア専門）</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-result">
+                        <span class="before">月間: 3人</span>
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="after">月100人</span>
+                    </div>
+                    <p class="testimonial-text">
+                        店販売上2.5倍になり、さらに独立もできた。PDCAを回しながらの毎日投稿。ひたすらインプット&アウトプットで大きな成果に。
+                    </p>
+                </div>
+            </div>
+
+            <div class="proof-stats">
+                <div class="proof-stat">
+                    <i class="fas fa-users"></i>
+                    <h3>300名+</h3>
+                    <p>アクティブメンバー</p>
+                </div>
+                <div class="proof-stat">
+                    <i class="fas fa-users"></i>
+                    <h3>求人獲得</h3>
+                    <p>多数のメンバーが達成</p>
+                </div>
+                <div class="proof-stat">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>全国対応</h3>
+                    <p>都市・地方問わず</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section id="problem-solution" class="problem-solution">
+        <div class="container">
+            <div class="problem-block">
+                <h2 class="problem-title">
+                    なぜ、頑張って投稿しても
+                    <span class="mobile-break underline">お客様が増えないのか？</span>
+                </h2>
+                
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <i class="fas fa-times-circle"></i>
+                        <h3>見た目重視の投稿</h3>
+                        <p>オシャレな写真ばかりで、顧客の悩みに響かない</p>
+                    </div>
+                    <div class="problem-card">
+                        <i class="fas fa-times-circle"></i>
+                        <h3>ターゲット不明確</h3>
+                        <p>誰に向けた投稿か分からず、誰にも刺さらない</p>
+                    </div>
+                    <div class="problem-card">
+                        <i class="fas fa-times-circle"></i>
+                        <h3>集客導線の欠如</h3>
+                        <p>フォロワーは増えても予約に繋がらない</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="solution-block">
+                <div class="solution-arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+                
+                <h2 class="solution-title">
+                    実は、Instagram集客には
+                    <span class="mobile-break gradient-text">「型」が存在します</span>
+                </h2>
+                
+                <div class="solution-story">
+                    <div class="story-content">
+                        <h3>同じ悩みを抱えていました</h3>
+                        <p>
+                            5年前、私も毎日投稿しているのに全く集客できず、
+                            ホットペッパーの広告費に月30万円も使っていました。
+                        </p>
+                        <p>
+                            しかし、ある「集客の型」に出会ってから状況は一変。
+                            <strong>3ヶ月で広告費ゼロ、売上3倍</strong>を実現しました。
+                        </p>
+                        <p>
+                            これは実際に寄せられたメンバーさんからの感想です。
+                        </p>
+                        <p>
+                            成功法則を体系化し、誰でも再現できるメソッドとして
+                            確立したのが、Fleeksの集客システムです。
+                        </p>
+                    </div>
+                    <div class="story-visual">
+                        <div class="story-illustration">
+                            <div class="success-chart">
+                                <div class="chart-bar" style="height: 30%"></div>
+                                <div class="chart-bar" style="height: 60%"></div>
+                                <div class="chart-bar" style="height: 90%"></div>
+                                <div class="chart-bar active" style="height: 100%"></div>
+                            </div>
+                            <div class="growth-arrow">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                        </div>
+                        <div class="story-badge">
+                            <i class="fas fa-check-circle"></i>
+                            実証済みメソッド
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">BENEFITS</span>
+                <h2 class="section-title">
+                    Fleeksで得られる<span class="gradient-text">6つの価値</span>
+                </h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>顧客心理×マーケ思考</h3>
+                    <p>美容業界特化の顧客心理とマーケティング理論を同時習得</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>再現性抜群の型</h3>
+                    <p>都会でも地方でも結果が出る実証済みの集客フレームワーク</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>一生使えるスキル</h3>
+                    <p>SNSが変わっても通用する本質的な集客力が身につく</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>即効性のある実践</h3>
+                    <p>学んだその日から使える具体的なテクニックを提供</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>切磋琢磨する仲間</h3>
+                    <p>全国の成功を目指す美容師と繋がり高め合える環境</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>経営者視点の獲得</h3>
+                    <p>独立・求人・店舗展開にも活用できる経営マインド</p>
+                </div>
+=======
+    <title>Fleeks - 美容師のためのインスタグラム集客戦略</title>
+    <meta name="description" content="月間55名の新規集客を実現する美容師のためのインスタグラム戦略。顧客心理に基づいた集客システムで、予約が取れない美容室へ。">
+    
+    <!-- OGP設定 -->
+    <meta property="og:title" content="Fleeks - 美容師のためのインスタグラム集客戦略">
+    <meta property="og:description" content="顧客心理に基づいた集客システムで、月間30名以上の新規客獲得を実現。75%の美容師が2ヶ月で成果を実感。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shiki0138.github.io/Fleeks/">
+    <meta property="og:image" content="https://shiki0138.github.io/Fleeks/images/ogp-image.webp">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- form.run -->
+    <script src="https://js.form.run/js/v1/form.run.js"></script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="#">
+                        <img src="images/logo.webp" alt="Fleeks" width="120" height="40">
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav class="nav-menu" id="nav-menu">
+                    <ul>
+                        <li><a href="#problem" class="nav-link">課題</a></li>
+                        <li><a href="#solution" class="nav-link">解決策</a></li>
+                        <li><a href="#success-stories" class="nav-link">成功事例</a></li>
+                        <li><a href="#skills" class="nav-link">学べるスキル</a></li>
+                        <li><a href="#pricing" class="nav-link">料金</a></li>
+                        <li><a href="#faq" class="nav-link">よくある質問</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <a href="#contact" class="btn btn-primary">無料相談に申し込む</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1 class="hero-title animate-fade-in">月間55名の新規集客を実現する<br>美容師のためのインスタグラム戦略</h1>
+            <p class="hero-subtitle animate-fade-in animate-delay-1">顧客心理に基づいた集客システムで、予約が取れない美容室へ</p>
+            
+            <div class="hero-benefits">
+                <div class="benefit-item animate-fade-in animate-delay-2">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>75%</h3>
+                        <p>2ヶ月で成果を実感</p>
+                    </div>
+                </div>
+                <div class="benefit-item animate-fade-in animate-delay-2">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>30名+</h3>
+                        <p>月間新規顧客獲得</p>
+                    </div>
+                </div>
+                <div class="benefit-item animate-fade-in animate-delay-2">
+                    <div class="benefit-icon">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <div class="benefit-text">
+                        <h3>90%</h3>
+                        <p>リピート率</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-cta animate-fade-in animate-delay-3">
+                <a href="#contact" class="btn btn-primary btn-large btn-pulse">残り5名様：無料相談に申し込む <i class="fas fa-arrow-right"></i></a>
+                <p class="trust-badge">安心の30日間返金保証付き</p>
+>>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
+            </div>
+        </div>
+    </section>
+
+<<<<<<< HEAD
+
+    <!-- AI/DX Section -->
+    <section id="ai-dx" class="ai-dx">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">INNOVATION</span>
+                <h2 class="section-title">
+                    最新AI×マーケティング戦略も
+                    <span class="mobile-break gradient-text">いち早く習得</span>
+                </h2>
+            </div>
+
+            <div class="ai-content">
+                <div class="ai-text">
+                    <h3>
+                        <i class="fas fa-robot"></i>
+                        生成AIを活用した美容師の業務改善戦略
+                    </h3>
+                    <p>
+                        ChatGPTなど生成AIを美容業界に特化した活用法。
+                        美容師向けにこの情報を発信しているマーケターは他にいません。
+                    </p>
+                    <ul class="ai-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            独自開発のAIインスタ投稿生成ツールへアクセス
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            フォロワー・リーチ数予測機能付き
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            カウンセリング自動化システム
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            最新AIツールの優先提供（一般非公開）
+                        </li>
+                    </ul>
+                    <div class="ai-badge">
+                        <i class="fas fa-award"></i>
+                        独自開発のAIツールで美容業界に革命を
+                    </div>
+                    <a href="https://trgraqfo.gensparkspace.com/" target="_blank" class="ai-tool-demo">
+                        <i class="fas fa-external-link-alt"></i>
+                        実際のAIツールを体験する
+                    </a>
+                </div>
+                <div class="ai-visual">
+                    <div class="ai-demo">
+                        <div class="ai-screen">
+                            <div class="typing-animation">
+                                <span class="typing-text">Instagram投稿を自動生成中...</span>
+                            </div>
+                        </div>
+                        <div class="ai-particles">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+=======
+    <!-- 問題提起セクション -->
+    <section class="problems section-padding" id="problem">
+        <div class="container">
+            <h2 class="section-title">なぜ多くの美容師はインスタグラムで成果が出ないのか？</h2>
+            
+            <div class="problems-container">
+                <div class="problem-item scroll-animate">
+                    <div class="problem-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>フォロワーは増えても予約に繋がらない</h3>
+                    <p>いいね数やフォロワー数は増えているのに、実際の予約や売上に結びつかず、時間と労力だけが消費されていませんか？</p>
+                </div>
+                
+                <div class="problem-item scroll-animate">
+                    <div class="problem-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>何を投稿すればいいのか分からない</h3>
+                    <p>毎日の投稿内容に悩み、他のサロンの真似をしても反応がなく、効果的なコンテンツ戦略が立てられていませんか？</p>
+                </div>
+                
+                <div class="problem-item scroll-animate">
+                    <div class="problem-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <h3>時間をかけても成果が見えない</h3>
+                    <p>インスタグラム運用に多くの時間を費やしているのに、明確な成果が見えず、本業の施術時間が圧迫されていませんか？</p>
+                </div>
+            </div>
+            
+            <div class="problems-question scroll-animate">
+                <p>このような悩みを抱えていませんか？</p>
+>>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
+            </div>
+        </div>
+    </section>
+
+<<<<<<< HEAD
+    <!-- Video Section -->
+    <section id="video-content" class="video-content">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">LEARNING</span>
+                <h2 class="section-title">
+                    実践的な<span class="gradient-text">動画コンテンツ</span>で学ぶ
+                </h2>
+            </div>
+
+            <div class="video-showcase">
+                <div class="main-video">
+                    <div class="video-wrapper">
+                        <div class="youtube-embed">
+                            <div id="youtube-player"></div>
+                            <div class="video-overlay" id="video-overlay" style="display: none;">
+                                <div class="overlay-content">
+                                    <h3>続きを見るには</h3>
+                                    <p>メンバー限定コンテンツです</p>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrDmvMTBLYWdZtyTgw7xB68tu0Uk6ETvbooY-ZsoCSE2q80Q/viewform?usp=sf_link" target="_blank" class="cta-button">
+                                        <span>今すぐエントリーする</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>実際の成功事例と具体的ノウハウを公開</h3>
+                            <p>YouTubeで定期配信中の最新情報をサロンメンバーには更に詳しく</p>
+                            <a href="https://www.instagram.com/shiki_fp_138/" target="_blank" class="instagram-link">
+                                <i class="fab fa-instagram"></i>
+                                Instagram @shiki_fp_138 をフォロー
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-features">
+                    <div class="video-feature">
+                        <i class="fas fa-video"></i>
+                        <h4>週次ライブ配信</h4>
+                        <p>最新事例と実践テクニックを毎週更新</p>
+                    </div>
+                    <div class="video-feature">
+                        <i class="fas fa-archive"></i>
+                        <h4>過去動画見放題</h4>
+                        <p>過去動画見放題でいつでも復習</p>
+                    </div>
+                    <div class="video-feature">
+                        <i class="fas fa-comments"></i>
+                        <h4>質問し放題</h4>
+                        <p>分からないことは即座に解決</p>
+                    </div>
+                </div>
+=======
+    <!-- 解決策セクション -->
+    <section class="solution section-padding" id="solution">
+        <div class="container">
+            <h2 class="section-title">Fleeksが提供する解決策：顧客心理に基づく集客システム</h2>
+            
+            <div class="solution-diagram">
+                <div class="solution-element scroll-animate">
+                    <div class="element-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>見込み客が反応するコンテンツ</h3>
+                </div>
+                
+                <div class="solution-element scroll-animate">
+                    <div class="element-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>見込み客が期待するやり取り</h3>
+                </div>
+                
+                <div class="solution-element scroll-animate">
+                    <div class="element-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>ついつい反応する心理訴求</h3>
+                </div>
+            </div>
+            
+            <div class="solution-explanation scroll-animate">
+                <p>Fleeksでは「顧客心理」を理解した論理的なインスタグラム運用を学び、実践していただけます。</p>
+            </div>
+            
+            <div class="solution-points">
+                <div class="solution-point scroll-animate">
+                    <div class="point-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="point-text">
+                        <h3>顧客心理を理解したコンテンツ作成</h3>
+                        <p>フォロワーではなく「予約客」を増やすためのターゲットに響く投稿内容と頻度を最適化します。</p>
+                    </div>
+                </div>
+                
+                <div class="solution-point scroll-animate">
+                    <div class="point-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="point-text">
+                        <h3>効果的なコミュニケーション方法</h3>
+                        <p>DMやコメントでの効果的なやり取りを習得し、見込み客の不安を解消して予約へと導きます。</p>
+                    </div>
+                </div>
+                
+                <div class="solution-point scroll-animate">
+                    <div class="point-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="point-text">
+                        <h3>明確な行動プランの提供</h3>
+                        <p>何をいつどのように投稿するべきか、具体的なカレンダーと実践方法をお伝えします。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mid-cta scroll-animate">
+                <a href="#contact" class="btn btn-primary btn-large">無料相談に申し込む <i class="fas fa-arrow-right"></i></a>
+>>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">料金プラン</h2>
+            <p class="section-subtitle">あなたのニーズに合わせて選べる2つのプラン</p>
+            
+            <div class="pricing-cards">
+                <!-- 個人プラン -->
+                <div class="pricing-card individual">
+                    <div class="plan-label">個人向け</div>
+                    <div class="offer-header">
+                        <h3>個人プラン</h3>
+                        <div class="offer-badge">
+                            <i class="fas fa-fire"></i>
+                            期間限定価格
+                        </div>
+                    </div>
+
+                    <div class="price-block">
+                        <div class="original-price">
+                            <span>通常価格</span>
+                            <s>¥8,980</s>
+                        </div>
+                        <div class="current-price">
+                            <span class="price-label">今だけ</span>
+                            <span class="price-amount">¥7,980</span>
+                            <span class="price-period">/月</span>
+                        </div>
+                        <p class="price-note">
+                            <i class="fas fa-info-circle"></i>
+                            ホットペッパーの最低価格で一生モノのスキルが身につく
+                        </p>
+                    </div>
+
+                    <div class="offer-benefits">
+                        <h4>含まれるもの</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 週次Zoom勉強会（録画あり）</li>
+                            <li><i class="fas fa-check"></i> 過去動画見放題</li>
+                            <li><i class="fas fa-check"></i> 最新AI活用ノウハウ</li>
+                            <li><i class="fas fa-check"></i> 成功事例の共有</li>
+                            <li><i class="fas fa-check"></i> 業務改善システム優先販売</li>
+                            <li><i class="fas fa-check"></i> 特別ゲスト講座</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrDmvMTBLYWdZtyTgw7xB68tu0Uk6ETvbooY-ZsoCSE2q80Q/viewform?usp=sf_link" target="_blank" class="cta-button">
+                        <span>個人で申し込む</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <div class="guarantee">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>解約はDM一本でOK</p>
+                    </div>
+                </div>
+
+                <!-- 店舗プラン -->
+                <div class="pricing-card business featured">
+                    <div class="plan-label">人気No.1</div>
+                    <div class="offer-header">
+                        <h3>店舗プラン</h3>
+                        <div class="offer-badge">
+                            <i class="fas fa-star"></i>
+                            教育コスト削減
+                        </div>
+                    </div>
+
+                    <div class="price-block">
+                        <div class="current-price">
+                            <span class="price-label">20名まで</span>
+                            <span class="price-amount">¥29,800</span>
+                            <span class="price-period">/月</span>
+                        </div>
+                        <p class="price-note">
+                            <i class="fas fa-users"></i>
+                            1人あたり実質¥1,490で全スタッフが学べる
+                        </p>
+                        <p class="price-addon">
+                            ※50名までは¥49,800/月
+                        </p>
+                    </div>
+
+                    <div class="offer-benefits">
+                        <h4>店舗プランだけの特典</h4>
+                        <ul>
+                            <li><i class="fas fa-crown"></i> <strong>スタッフ教育コンテンツ</strong></li>
+                            <li><i class="fas fa-check"></i> 接客マナー研修動画</li>
+                            <li><i class="fas fa-check"></i> ビジネス基礎知識講座</li>
+                            <li><i class="fas fa-check"></i> SNS運用マニュアル</li>
+                            <li><i class="fas fa-check"></i> チームビルディング教材</li>
+                            <li><i class="fas fa-check"></i> 店舗売上アップ戦略</li>
+                            <li><i class="fas fa-check"></i> スタッフモチベーション管理</li>
+                        </ul>
+                    </div>
+
+                    <div class="business-benefits">
+                        <h4>こんな店舗におすすめ</h4>
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-chart-line"></i> 教育コストを削減したい</li>
+                            <li><i class="fas fa-users"></i> チーム全体のレベルを上げたい</li>
+                            <li><i class="fas fa-graduation-cap"></i> 体系的な教育システムが欲しい</li>
+                            <li><i class="fas fa-trophy"></i> 競合他店と差別化したい</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrDmvMTBLYWdZtyTgw7xB68tu0Uk6ETvbooY-ZsoCSE2q80Q/viewform?usp=sf_link" target="_blank" class="cta-button large">
+                        <span>店舗で申し込む</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <div class="guarantee">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>解約はDM一本でOK・初月全額返金保証</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="urgency-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>
+                    <strong>※定員に達し次第、募集を停止します</strong><br>
+                    現在の空き枠: <span class="slots-left">残り7名</span>
+                </p>
+            </div>
+
+            <!-- 価格比較表 -->
+            <div class="price-comparison">
+                <h3>プラン比較表</h3>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>個人プラン</th>
+                                <th class="featured">店舗プラン</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>月額料金</td>
+                                <td>¥7,980</td>
+                                <td class="featured">¥29,800<br><small>(20名まで)</small></td>
+                            </tr>
+                            <tr>
+                                <td>利用可能人数</td>
+                                <td>1名</td>
+                                <td class="featured">20名まで<br><small>※50名まで¥49,800</small></td>
+                            </tr>
+                            <tr>
+                                <td>1人あたりの実質価格</td>
+                                <td>¥7,980</td>
+                                <td class="featured">¥1,490〜</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 成功事例セクション -->
+    <section class="case-studies section-padding" id="success-stories">
+        <div class="container">
+            <h2 class="section-title">実際に成果を出している美容師の声</h2>
+            
+            <div class="case-studies-container">
+                <div class="case-study-card scroll-animate">
+                    <div class="case-study-image">
+                        <img src="images/case-study1.webp" alt="和田優希さん" width="300" height="150">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>1ヶ月で57名の新規客獲得</h3>
+                        <p class="salon-name">和田優希さん / Hair Salon EN</p>
+                        <div class="before-after">
+                            <div class="before">
+                                <span class="label">Before</span>
+                                <span class="value">15名</span>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="after">
+                                <span class="label">After</span>
+                                <span class="value">57名</span>
+                            </div>
+                        </div>
+                        <p class="testimonial">「7月ご新規様57名にご予約いただきました！売り上げも¥1,600,000を超えました！」</p>
+                        <a href="#" class="instagram-link"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card scroll-animate">
+                    <div class="case-study-image">
+                        <img src="images/case-study2.webp" alt="永谷さん" width="300" height="150">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>スタッフ単価が1.5倍にアップ</h3>
+                        <p class="salon-name">永谷さん / VOTAN</p>
+                        <div class="before-after">
+                            <div class="before">
+                                <span class="label">Before</span>
+                                <span class="value">¥13,000</span>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="after">
+                                <span class="label">After</span>
+                                <span class="value">¥20,000</span>
+                            </div>
+                        </div>
+                        <p class="testimonial">「開業期の2月に技売り160%アップ。昨年の12月から過去月最高を更新し続けています。」</p>
+                        <a href="#" class="instagram-link"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card scroll-animate">
+                    <div class="case-study-image">
+                        <img src="images/case-study3.webp" alt="田力優斗さん" width="300" height="150">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>月間30名以上を6ヶ月継続</h3>
+                        <p class="salon-name">田力優斗さん / Trico Hair</p>
+                        <div class="before-after">
+                            <div class="before">
+                                <span class="label">Before</span>
+                                <span class="value">10名</span>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="after">
+                                <span class="label">After</span>
+                                <span class="value">30名+</span>
+                            </div>
+                        </div>
+                        <p class="testimonial">「7月に今までで1番多くのご新規様にご来店していただけました。インスタからきた方のリピート率も高いまま維持できています。」</p>
+                        <a href="#" class="instagram-link"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="success-stats scroll-animate">
+                <div class="stat-circle">
+                    <span class="stat-number counter-value" data-target="75">0</span><span>%</span>
+                    <span class="stat-text">の方が2ヶ月で<br>成果を実感</span>
+                </div>
+                <ul class="stat-list">
+                    <li><i class="fas fa-check"></i> 入会4ヶ月目で月間30名以上（2ヶ月継続）</li>
+                    <li><i class="fas fa-check"></i> 1ヶ月で55名達成</li>
+                    <li><i class="fas fa-check"></i> 月間30名以上6ヶ月継続中</li>
+                    <li><i class="fas fa-check"></i> 売上が680万→730〜800万に増加</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3つの集客スキルセクション -->
+    <section class="services section-padding" id="skills">
+        <div class="container">
+            <h2 class="section-title">Fleeksで学べる3つの集客スキル</h2>
+            
+            <div class="services-container">
+                <div class="service-card scroll-animate hover-scale">
+                    <div class="service-image">
+                        <img src="images/skill-marketing.webp" alt="マーケティングスキル" width="300" height="200">
+                    </div>
+                    <div class="service-content">
+                        <h3>マーケティングスキル</h3>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> 顧客心理に基づいたコンテンツ作成</li>
+                            <li><i class="fas fa-check"></i> ターゲット設定と市場分析</li>
+                            <li><i class="fas fa-check"></i> 投稿頻度と時間帯の最適化</li>
+                            <li><i class="fas fa-check"></i> インスタグラムアルゴリズムの理解</li>
+                            <li><i class="fas fa-check"></i> 効果測定と分析方法</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card scroll-animate hover-scale">
+                    <div class="service-image">
+                        <img src="images/skill-psychology.webp" alt="接客スキル" width="300" height="200">
+                    </div>
+                    <div class="service-content">
+                        <h3>接客スキル</h3>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> DMでの効果的なコミュニケーション</li>
+                            <li><i class="fas fa-check"></i> 見込み客の不安を解消する会話術</li>
+                            <li><i class="fas fa-check"></i> 予約へと繋げるトーク術</li>
+                            <li><i class="fas fa-check"></i> コメント対応の最適化</li>
+                            <li><i class="fas fa-check"></i> リピーターを増やす関係構築法</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card scroll-animate hover-scale">
+                    <div class="service-image">
+                        <img src="images/skill-business.webp" alt="ビジネス戦略スキル" width="300" height="200">
+                    </div>
+                    <div class="service-content">
+                        <h3>ビジネス戦略スキル</h3>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> 長期的な集客計画の立て方</li>
+                            <li><i class="fas fa-check"></i> 効率的な時間管理術</li>
+                            <li><i class="fas fa-check"></i> 売上を最大化するメニュー設計</li>
+                            <li><i class="fas fa-check"></i> 安定した予約を確保する仕組み作り</li>
+                            <li><i class="fas fa-check"></i> 他サロンとの差別化戦略</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="curriculum scroll-animate">
+                <h3>2025年の配信予定コンテンツ</h3>
+                <div class="curriculum-months">
+                    <div class="month-item">
+                        <span class="month">1月</span>
+                        <span class="topic">年間集客計画の立て方</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">2月</span>
+                        <span class="topic">リピーター獲得戦略</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">3月</span>
+                        <span class="topic">春の集客キャンペーン</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">4月</span>
+                        <span class="topic">プロフィール最適化</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">5月</span>
+                        <span class="topic">ストーリーズ活用法</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">6月</span>
+                        <span class="topic">夏に向けた集客戦略</span>
+                    </div>
+                </div>
+                <div class="curriculum-months">
+                    <div class="month-item">
+                        <span class="month">7月</span>
+                        <span class="topic">リール動画制作術</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">8月</span>
+                        <span class="topic">DMコミュニケーション</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">9月</span>
+                        <span class="topic">秋の集客キャンペーン</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">10月</span>
+                        <span class="topic">ハッシュタグ戦略</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">11月</span>
+                        <span class="topic">年末集客準備</span>
+                    </div>
+                    <div class="month-item">
+                        <span class="month">12月</span>
+                        <span class="topic">年末年始特別企画</span>
+                    </div>
+                </div>
+                <div class="curriculum-cta">
+                    <a href="#contact" class="btn btn-secondary">詳細を聞いてみる</a>
+                </div>
+>>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
+            </div>
+        </div>
+    </section>
+
+<<<<<<< HEAD
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">よくある質問</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>どれくらいで集客効果が出ますか？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            個人差はありますが、早い方で1ヶ月、平均して2-3ヶ月で
+                            明確な集客効果を実感いただいています。
+                            型通りに実践すれば必ず結果は出ます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>毎日投稿できなくても大丈夫ですか？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            はい、大丈夫です。量より質を重視した投稿戦略をお教えします。
+                            週3-4回の投稿でも十分な効果が期待できます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>地方でも効果はありますか？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            むしろ地方の方が競合が少なく、効果が出やすい傾向にあります。
+                            地域特性を活かした集客戦略も個別にアドバイスしています。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>スタイリストでも参加できますか？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            もちろんです。フリーランス準備中の方から
+                            サロンオーナーまで幅広く参加いただいています。
+                            それぞれの立場に合わせたアドバイスを提供します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>途中解約はできますか？</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            いつでも解約可能です。DMを1通送るだけで完了。
+                            違約金や面倒な手続きは一切ありません。
+                            まずは1ヶ月お試しください。
+                        </p>
+=======
+    <!-- 料金プランセクション -->
+    <section class="pricing section-padding" id="pricing">
+        <div class="container">
+            <h2 class="section-title">料金プラン</h2>
+            
+            <div class="pricing-card scroll-animate">
+                <div class="pricing-image">
+                    <img src="images/pricing-image.webp" alt="メンバーシップ" width="250" height="250">
+                </div>
+                <div class="pricing-content">
+                    <div class="pricing-header">
+                        <h3>Fleeksメンバーシップ</h3>
+                        <p class="pricing-description">美容師のためのインスタグラム集客に特化したオンラインサロン</p>
+                    </div>
+                    
+                    <div class="pricing-special">
+                        <p class="special-note">通常価格 <span class="old-price">¥12,800</span>/月</p>
+                        <p class="special-reason">
+                            現在、新規会員様限定の特別価格でご案内しています。<br>
+                            <span class="highlight">※ 残り5名様限定の特別価格です</span>
+                        </p>
+                    </div>
+                    
+                    <div class="pricing-current">
+                        <p class="current-price">月額 <span class="price-value">¥8,980</span></p>
+                        <p class="discount-note">※ 30日間の返金保証付き</p>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <h4>メンバーシップ特典</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 週1回のグループコンサルティング</li>
+                            <li><i class="fas fa-check"></i> 月2回の個別サポート</li>
+                            <li><i class="fas fa-check"></i> 24時間質問し放題のコミュニティ</li>
+                            <li><i class="fas fa-check"></i> インスタグラム運用マニュアル</li>
+                            <li><i class="fas fa-check"></i> 成功事例集とテンプレート</li>
+                            <li><i class="fas fa-check"></i> 月間コンテンツカレンダー</li>
+                            <li><i class="fas fa-check"></i> ライブ配信アーカイブ視聴権</li>
+                            <li><i class="fas fa-check"></i> インスタグラム診断・分析</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="pricing-guarantee">30日間の全額返金保証</p>
+                    
+                    <div class="pricing-cta">
+                        <a href="#contact" class="btn btn-primary btn-large">無料相談に申し込む <i class="fas fa-arrow-right"></i></a>
+>>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<<<<<<< HEAD
+    <!-- Final CTA -->
+    <section id="final-cta" class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>
+                    将来への不安を、<br>
+                    <span class="gradient-text">確かな自信に変える</span>
+                </h2>
+                <p>
+                    ホットペッパーに頼らない集客力を身につけ、<br>
+                    理想の美容師人生を実現しませんか？
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrDmvMTBLYWdZtyTgw7xB68tu0Uk6ETvbooY-ZsoCSE2q80Q/viewform?usp=sf_link" target="_blank" class="cta-button primary large">
+                    <span>今すぐエントリーする</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <p class="final-note">
+                    <i class="fas fa-clock"></i>
+                    今なら24時間以内に返信します
+                </p>
+=======
+    <!-- FAQセクション -->
+    <section class="faq section-padding" id="faq">
+        <div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>インスタグラムを始めたばかりでも参加できますか？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、もちろん参加いただけます。むしろ初期段階から正しい方法を学ぶことで、遠回りせずに成果を出すことができます。初心者向けの基礎から丁寧に指導いたします。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>忙しくて投稿する時間がないのですが大丈夫ですか？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Fleeksでは効率的なコンテンツ作成方法や時間管理のコツもお伝えしています。週末にまとめて作成する方法など、忙しい美容師さんでも続けられるノウハウをお教えします。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>地方の美容室でも効果はありますか？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、地方の美容室こそインスタグラム集客の効果が高いです。実際に地方都市で月30名以上の新規客を獲得している会員様も多数いらっしゃいます。地域特性に合わせた戦略をご提案します。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>サポート体制はどうなっていますか？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>週1回のグループコンサルティング、月2回の個別サポート、24時間質問可能なコミュニティを通じて、手厚くサポートいたします。困ったことがあればいつでもご質問いただけます。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>途中で退会することはできますか？</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、いつでも退会可能です。ただし、多くの会員様は成果を実感されて継続されています。また、初月は30日間の返金保証もございますので、安心してお試しいただけます。</p>
+                    </div>
+                </div>
+>>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
+            </div>
+        </div>
+    </section>
+
+<<<<<<< HEAD
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fleeks. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
+    <!-- ヒートマップトラッキング -->
+    <script src="heatmap-tracker.js"></script>
+    
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
+</html>
+=======
+    <!-- お問い合わせセクション -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <h2 class="section-title">無料相談に申し込む</h2>
+            
+            <div class="contact-content">
+                <div class="contact-intro">
+                    <p>あなたのサロンに合わせた集客戦略をご提案します。<br>まずは無料相談でお気軽にご相談ください。</p>
+                </div>
+                
+                <!-- form.runを使用したフォーム -->
+                <form class="contact-form" action="https://form.run/api/v1/r/YOUR_FORM_RUN_ID" method="post">
+                    <!-- form.run必須の非表示フィールド -->
+                    <input type="hidden" name="_formrun_gotcha">
+                    
+                    <div class="form-group">
+                        <label for="name">お名前 <span class="required">*</span></label>
+                        <input type="text" id="name" name="お名前" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="salon">サロン名 <span class="required">*</span></label>
+                        <input type="text" id="salon" name="サロン名" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">*</span></label>
+                        <input type="email" id="email" name="メールアドレス" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">電話番号 <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="電話番号" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instagram">インスタグラムアカウント</label>
+                        <input type="text" id="instagram" name="Instagramアカウント">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">ご相談内容</label>
+                        <textarea id="message" name="ご相談内容"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="how">Fleeksをどこでお知りになりましたか？</label>
+                        <select id="how" name="お問い合わせ経路">
+                            <option value="">選択してください</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="紹介">友人・知人の紹介</option>
+                            <option value="検索">検索エンジン</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="privacy" name="プライバシーポリシー同意" value="同意する" required>
+                        <label for="privacy">プライバシーポリシーに同意する <span class="required">*</span></label>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-large" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">無料相談を申し込む <i class="fas fa-arrow-right"></i></button>
+                        <p class="form-note">※ 提出いただいた情報は、お問い合わせ対応のみに使用します。</p>
+                    </div>
+                </form>
+                
+                <div class="contact-alternative">
+                    <p>お電話でのお問い合わせは<br><a href="tel:0312345678">03-1234-5678</a>（平日10:00-18:00）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">
+                        <img src="images/logo-white.webp" alt="Fleeks" width="120" height="40">
+                    </a>
+                    <p>美容師のためのインスタグラム集客戦略</p>
+                </div>
+                
+                <div class="footer-info">
+                    <p>〒123-4567 東京都渋谷区〇〇1-2-3</p>
+                    <p>TEL: 03-1234-5678</p>
+                    <p>Email: info@fleeks.jp</p>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">プライバシーポリシー</a>
+                    <a href="#">特定商取引法に基づく表記</a>
+                    <a href="#">会社概要</a>
+                </div>
+                
+                <p class="footer-copyright">&copy; 2025 Fleeks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- フローティングCTAボタン -->
+    <div class="floating-cta">
+        <a href="#contact" class="btn btn-primary btn-floating">
+            <span class="pulse-ring"></span>
+            無料相談に申し込む <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- 離脱防止ポップアップ -->
+    <div id="exit-intent-popup" class="exit-popup">
+        <div class="exit-popup-content">
+            <button class="close-popup">&times;</button>
+            <h3>待ってください！</h3>
+            <p>今なら<strong>特別PDF</strong>「インスタグラム集客成功事例10選」を無料プレゼント中です。</p>
+            <form class="mini-form" action="https://form.run/api/v1/r/YOUR_FORM_RUN_ID_FOR_PDF" method="post">
+                <input type="hidden" name="_formrun_gotcha">
+                <input type="email" name="メールアドレス" placeholder="メールアドレス" required>
+                <input type="hidden" name="フォーム種類" value="PDF申し込み">
+                <button type="submit" class="btn btn-secondary">PDFを受け取る</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- スクリプト -->
+    <script src="main.js"></script>
+    <script src="animation.js"></script>
+    <script src="optimize.js"></script>
+</body>
+</html>
+>>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
