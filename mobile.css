@@ -240,6 +240,17 @@
         gap: 20px;
     }
     
+    /* iPhone Mockupのモバイル調整 */
+    .iphone-mockup {
+        width: 240px;
+        height: 480px;
+    }
+    
+    .iphone-mockup::before,
+    .iphone-mockup::after {
+        display: none; /* モバイルでは装飾要素を非表示 */
+    }
+    
     .hero-cta {
         margin-top: var(--spacing-md);
     }

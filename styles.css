@@ -873,36 +873,56 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app-showcase {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.app-screenshots {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-}
-
-.app-device {
+/* iPhone Mockup Styles */
+.iphone-mockup {
     position: relative;
+    width: 320px;
+    height: 640px;
+    animation: floatPhone 6s ease-in-out infinite;
+}
+
+@keyframes floatPhone {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(-2deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+.iphone-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.5),
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        inset 0 0 3px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.iphone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 28px;
     overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.app-device.mobile {
-    width: 200px;
-    height: 400px;
-}
-
-.app-device.desktop {
-    width: 400px;
-    height: 250px;
+    z-index: 1;
 }
 
 .app-screenshot-img {
@@ -910,6 +930,140 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* iPhone Notch */
+.iphone-notch {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 28px;
+    background: #1a1a1a;
+    border-radius: 0 0 18px 18px;
+    z-index: 10;
+}
+
+.iphone-notch::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background: #333;
+    border-radius: 3px;
+}
+
+/* iPhone Home Button */
+.iphone-button {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: #2a2a2a;
+    border-radius: 50%;
+    display: none; /* Modern iPhones don't have home button */
+}
+
+/* Add floating elements around iPhone */
+.iphone-mockup::before,
+.iphone-mockup::after {
+    content: '';
+    position: absolute;
+    background: var(--accent-gold);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.iphone-mockup::before {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: -50px;
+}
+
+.iphone-mockup::after {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    left: -75px;
+    animation-delay: 1.5s;
+}
+
+/* AI-powered floating particles */
+.iphone-mockup {
+    position: relative;
+}
+
+.iphone-mockup::after {
+    content: '✨';
+    position: absolute;
+    font-size: 24px;
+    animation: sparkle 4s linear infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        left: 100%;
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}
+
+/* AI-themed gradient overlay */
+.iphone-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(212, 175, 55, 0.1) 50%,
+        transparent 70%
+    );
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.2;
+    }
 }
 
 .device-frame {
