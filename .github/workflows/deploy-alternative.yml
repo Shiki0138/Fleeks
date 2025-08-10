@@ -49,7 +49,7 @@ jobs:
           --exclude fleeks-react/src/ \
           --exclude fleeks-react/node_modules/ \
           --exclude .gitignore \
-          --exclude *.md \
-          ./ ./
+          --exclude '*.md' \
+          ./ ./public_html/
         bye
         "
