@@ -874,30 +874,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .app-showcase {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.app-screenshot {
+.app-screenshots {
     display: flex;
-    justify-content: center;
+    gap: 30px;
     align-items: center;
+    justify-content: center;
 }
 
 .app-device {
     position: relative;
-    width: 320px;
-    height: 640px;
-    background: #1a1a1a;
-    border-radius: 40px;
-    padding: 10px;
-    box-shadow: 
-        0 0 0 3px #333,
-        0 0 0 4px #222,
-        0 30px 60px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.app-device.mobile {
+    width: 200px;
+    height: 400px;
+}
+
+.app-device.desktop {
+    width: 400px;
+    height: 250px;
+}
+
+.app-screenshot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .device-frame {
@@ -1258,16 +1270,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .pricing .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .pricing .section-title {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .pricing .section-subtitle {
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .pricing-cards {
