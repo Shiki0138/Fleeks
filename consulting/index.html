@@ -173,7 +173,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 120px 0 80px;
+            padding: 150px 0 80px;
         }
 
         .hero-content {
@@ -558,18 +558,6 @@
             border-color: var(--neon-blue);
         }
 
-        .package.featured::after {
-            content: '人気';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--neon-pink);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
 
         .package:hover {
             transform: translateY(-10px);
@@ -997,6 +985,10 @@
             }
             
             /* Hero section */
+            .hero {
+                padding: 140px 0 60px;
+            }
+            
             .hero-content h1 {
                 font-size: 2rem;
                 line-height: 1.2;
@@ -1135,10 +1127,6 @@
                         <span class="trust-indicator-number">48%</span>
                         <span class="trust-indicator-text">平均売上改善率</span>
                     </div>
-                    <div class="trust-indicator">
-                        <span class="trust-indicator-number">100%</span>
-                        <span class="trust-indicator-text">継続率</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1152,7 +1140,7 @@
             <div class="problems-grid">
                 <div class="problem-card fade-in-up">
                     <i class="fas fa-exclamation-triangle problem-icon neon-glow"></i>
-                    <h3 class="problem-title">廃業リスクへの恐怖</h3>
+                    <h3 class="problem-title">売上が伸びていかない不安</h3>
                     <p class="problem-description">
                         売上の波に翻弄される日々。<br>
                         このままでは5年後も続けられるか不安...
@@ -1180,32 +1168,6 @@
         </div>
     </section>
 
-    <!-- Success Metrics Section -->
-    <section id="results" class="metrics-section space-bg">
-        <div class="ai-grid"></div>
-        <div class="container">
-            <h2 class="section-title fade-in-up">実績データ</h2>
-            
-            <div class="metrics-grid">
-                <div class="metric fade-in-up">
-                    <span class="metric-number" data-target="48">0</span>
-                    <span class="metric-label">平均売上改善率</span>
-                </div>
-                <div class="metric fade-in-up">
-                    <span class="metric-number" data-target="3.2">0</span>
-                    <span class="metric-label">平均導入後月数</span>
-                </div>
-                <div class="metric fade-in-up">
-                    <span class="metric-number" data-target="100">0</span>
-                    <span class="metric-label">継続率</span>
-                </div>
-                <div class="metric fade-in-up">
-                    <span class="metric-number" data-target="92">0</span>
-                    <span class="metric-label">満足度</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Service Packages Section -->
     <section id="services" class="packages-section">
@@ -1241,12 +1203,10 @@
                     <p class="package-period">6ヶ月契約</p>
                     
                     <ul class="package-features">
-                        <li>月2回の個別面談（各90分）</li>
+                        <li>月1回の個別面談（各90分）</li>
                         <li>カスタマイズされた経営戦略</li>
                         <li>24時間以内の優先サポート</li>
                         <li>売上分析レポート</li>
-                        <li>スタッフ教育プログラム</li>
-                        <li>成果保証制度</li>
                     </ul>
                     
                     <a href="#" onclick="openModal('個別コンサルティング'); return false;" class="package-cta">無料相談を予約</a>
@@ -1319,7 +1279,7 @@
                 </a>
                 
                 <p style="margin-top: 30px; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">
-                    ※診断は完全無料です。営業電話は一切いたしません。<br>
+                    ※診断は完全無料です。<br>
                     ※お受けできる人数に制限があるため、お断りすることもあります。あらかじめご了承ください。
                 </p>
             </div>
