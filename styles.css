@@ -866,7 +866,185 @@ h1, h2, h3, h4, h5, h6 {
     animation-delay: 2s;
 }
 
-/* Video Section */
+/* App Content Section */
+.app-content {
+    padding: var(--section-padding);
+    background: var(--bg-section);
+}
+
+.app-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.app-screenshot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-device {
+    position: relative;
+    width: 320px;
+    height: 640px;
+    background: #1a1a1a;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 
+        0 0 0 3px #333,
+        0 0 0 4px #222,
+        0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.device-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.device-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 25px;
+    background: #1a1a1a;
+    border-radius: 0 0 15px 15px;
+    z-index: 10;
+}
+
+.app-screen {
+    width: 100%;
+    height: 100%;
+    background: #050a15;
+    overflow: hidden;
+}
+
+.app-mockup {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    background: rgba(10, 22, 40, 0.95);
+    padding: 40px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.app-header h5 {
+    color: var(--accent-gold);
+    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+}
+
+.app-time {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.app-content-preview {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.content-item {
+    background: rgba(26, 35, 50, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all var(--transition-fast);
+}
+
+.content-item:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--accent-gold);
+}
+
+.content-item i {
+    color: var(--accent-gold);
+    font-size: 24px;
+}
+
+.content-item span {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.app-nav {
+    background: rgba(10, 22, 40, 0.95);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.app-nav i {
+    color: var(--text-gray);
+    font-size: 20px;
+    transition: var(--transition-fast);
+}
+
+.app-nav i:first-child {
+    color: var(--accent-gold);
+}
+
+.app-features {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.app-feature {
+    background: rgba(26, 35, 50, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+    padding: 30px;
+    transition: all var(--transition-fast);
+}
+
+.app-feature:hover {
+    transform: translateX(10px);
+    border-color: var(--accent-gold);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.app-feature i {
+    font-size: 36px;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+.app-feature h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text-light);
+}
+
+.app-feature p {
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* Video Section (keeping for legacy) */
 .video-content {
     padding: var(--section-padding);
     background: var(--bg-section);
@@ -1076,6 +1254,20 @@ h1, h2, h3, h4, h5, h6 {
 .pricing {
     padding: var(--section-padding);
     background: var(--bg-section);
+}
+
+.pricing .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.pricing .section-title {
+    text-align: center;
+}
+
+.pricing .section-subtitle {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .pricing-cards {
@@ -2223,6 +2415,16 @@ header.scrolled {
     .ai-content {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    .app-showcase {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .app-device {
+        transform: scale(0.8);
+        margin: -40px auto;
     }
     
     
