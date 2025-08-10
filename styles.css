@@ -3045,4 +3045,215 @@ ul, ol {
     pointer-events: none;
     opacity: 0.7;
 }
->>>>>>> 8ff9cd0009e8de3ddb5fa3554c702dff84246a7b
+
+/* ===== Pricing Section - 2 Plan Layout ===== */
+.pricing {
+    padding: var(--section-padding);
+    background: var(--bg-section);
+}
+
+.pricing .section-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: rgba(26, 35, 50, 0.8);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-card.featured {
+    border-color: var(--accent-gold);
+    transform: scale(1.05);
+}
+
+.pricing-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.plan-label {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    background: var(--accent-gold);
+    color: var(--primary-navy);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: var(--font-weight-bold);
+}
+
+.pricing-card h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.pricing-card h4 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: var(--accent-gold);
+}
+
+.price-addon {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-top: 12px;
+}
+
+.business-benefits {
+    margin: 30px 0;
+}
+
+.benefit-list {
+    list-style: none;
+}
+
+.benefit-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: var(--text-light);
+}
+
+.benefit-list i {
+    color: var(--accent-gold);
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .pricing-card h3 {
+        font-size: 24px;
+    }
+    
+    .price-amount {
+        font-size: 40px !important;
+    }
+}
+
+/* Price Comparison Table */
+.price-comparison {
+    margin-top: 60px;
+}
+
+.price-comparison h3 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--accent-gold);
+}
+
+.comparison-table {
+    overflow-x: auto;
+}
+
+.comparison-table table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: rgba(26, 35, 50, 0.8);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.comparison-table th {
+    background: rgba(212, 175, 55, 0.1);
+    font-weight: var(--font-weight-bold);
+    font-size: 18px;
+}
+
+.comparison-table th.featured,
+.comparison-table td.featured {
+    background: rgba(212, 175, 55, 0.05);
+    position: relative;
+}
+
+.comparison-table tbody tr:first-child td {
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+    color: var(--accent-gold);
+}
+
+.comparison-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:last-child td {
+    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    color: var(--accent-gold);
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    font-weight: var(--font-weight-medium);
+}
+
+.comparison-table .fa-check {
+    color: var(--success-green);
+    font-size: 20px;
+}
+
+.comparison-table .fa-times {
+    color: #666;
+    font-size: 20px;
+}
+
+.comparison-table small {
+    display: block;
+    font-size: 14px;
+    color: var(--text-gray);
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .comparison-table {
+        font-size: 14px;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px 8px;
+    }
+    
+    .comparison-table tbody tr:first-child td {
+        font-size: 18px;
+    }
+    
+    .comparison-table tbody tr:last-child td {
+        font-size: 16px;
+    }
+}
