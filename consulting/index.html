@@ -920,6 +920,127 @@
         .required {
             color: var(--neon-pink);
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(5, 7, 20, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 20px;
+                border-top: 1px solid var(--glass-border);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .nav-menu a {
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                padding: 8px;
+            }
+            
+            .header-content {
+                position: relative;
+            }
+            
+            /* Touch-friendly buttons */
+            .cta-button,
+            .package-cta,
+            .form-submit {
+                min-height: 44px;
+                min-width: 44px;
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+            
+            /* Modal mobile styles */
+            .modal-content {
+                width: 95%;
+                max-width: 95vw;
+                margin: 10px;
+                padding: 20px;
+                max-height: 90vh;
+            }
+            
+            /* Form elements */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+            
+            /* Package cards */
+            .packages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            /* Hero section */
+            .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            /* Pain points grid */
+            .pain-points {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            /* Problems grid */
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Metrics grid */
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* Prevent horizontal scroll */
+            body {
+                overflow-x: hidden;
+            }
+            
+            .container {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+        }
+        
+        /* Default mobile menu hidden */
+        .mobile-menu-toggle {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -939,6 +1060,9 @@
                         <li><a href="#services">サービス</a></li>
                         <li><a href="#contact">お問い合わせ</a></li>
                     </ul>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </nav>
             </div>
         </div>
@@ -1379,11 +1503,35 @@
             }
         });
 
-        // Mobile menu toggle (if needed)
-        const mobileMenuToggle = () => {
+        // Mobile menu toggle
+        function toggleMobileMenu() {
             const navMenu = document.querySelector('.nav-menu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
             navMenu.classList.toggle('active');
-        };
+            
+            // Change icon
+            const icon = toggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.querySelector('.nav-menu');
+                const toggle = document.querySelector('.mobile-menu-toggle');
+                const icon = toggle.querySelector('i');
+                
+                navMenu.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
 
         // Modal functions
         let submitted = false;

@@ -1,5 +1,36 @@
 /* モバイル対応スタイル */
 
+/* Touch-friendly targets for all screen sizes */
+.cta-button,
+.btn,
+.hero-button,
+button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 24px;
+    font-size: 1rem;
+}
+
+/* Form elements - prevent iOS zoom */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+    font-size: 16px !important;
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* 大型タブレット - 992px以下 */
 @media (max-width: 992px) {
     :root {
