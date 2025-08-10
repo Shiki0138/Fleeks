@@ -769,6 +769,157 @@
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--space-dark);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+        }
+
+        .close-modal:hover {
+            color: var(--neon-pink);
+            transform: rotate(90deg);
+        }
+
+        .form-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 20px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid #4CAF50;
+            border-radius: 10px;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .required {
+            color: var(--neon-pink);
+        }
     </style>
 </head>
 <body>
@@ -842,7 +993,7 @@
                     </div>
                 </div>
                 
-                <a href="#contact" class="cta-button">
+                <a href="javascript:void(0)" class="cta-button" onclick="openModal()">
                     無料経営診断を受ける
                     <span class="cta-subtext">3分で完了・即日結果をお届け</span>
                 </a>
@@ -954,7 +1105,7 @@
                         <li>成功事例の共有</li>
                     </ul>
                     
-                    <a href="#contact" class="package-cta">詳細を見る</a>
+                    <a href="../" class="package-cta">詳細を見る</a>
                 </div>
                 
                 <div class="package featured fade-in-up">
@@ -974,7 +1125,7 @@
                         <li>成果保証制度</li>
                     </ul>
                     
-                    <a href="#contact" class="package-cta">無料相談を予約</a>
+                    <a href="javascript:void(0)" class="package-cta" onclick="openModal()">無料相談を予約</a>
                 </div>
                 
                 <div class="package fade-in-up">
@@ -994,7 +1145,7 @@
                         <li>完全伴走型サポート</li>
                     </ul>
                     
-                    <a href="#contact" class="package-cta">お問い合わせ</a>
+                    <a href="javascript:void(0)" class="package-cta" onclick="openModal()">お問い合わせ</a>
                 </div>
             </div>
         </div>
@@ -1012,10 +1163,10 @@
                     3分で完了し、即日で診断結果をお届けします。
                 </p>
                 
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrDmvMTBLYWdZtyTgw7xB68tu0Uk6ETvbooY-ZsoCSE2q80Q/viewform" 
-                   target="_blank" 
+                <a href="javascript:void(0)" 
                    class="cta-button" 
-                   style="font-size: 1.3rem; padding: 25px 60px;">
+                   style="font-size: 1.3rem; padding: 25px 60px;"
+                   onclick="openModal()">
                     <i class="fas fa-clipboard-check" style="margin-right: 10px;"></i>
                     無料経営診断を受ける
                     <span class="cta-subtext">3分で完了・即日結果</span>
@@ -1048,6 +1199,73 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Form -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="form-title">無料経営診断のお申し込み</h2>
+            
+            <form id="consultingForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfrDmvMTBLYWdZtyTgw7xB68tu0Uk6ETvbooY-ZsoCSE2q80Q/formResponse" method="POST" target="hidden_iframe">
+                <div class="form-group">
+                    <label for="name">お名前 <span class="required">*</span></label>
+                    <input type="text" id="name" name="entry.1234567890" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="salon">サロン名 <span class="required">*</span></label>
+                    <input type="text" id="salon" name="entry.0987654321" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="required">*</span></label>
+                    <input type="email" id="email" name="entry.1122334455" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">電話番号 <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="entry.5544332211" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="staff">スタッフ数</label>
+                    <select id="staff" name="entry.9988776655">
+                        <option value="">選択してください</option>
+                        <option value="1-3名">1-3名</option>
+                        <option value="4-6名">4-6名</option>
+                        <option value="7-10名">7-10名</option>
+                        <option value="11名以上">11名以上</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="concern">現在の経営課題 <span class="required">*</span></label>
+                    <textarea id="concern" name="entry.6677889900" required placeholder="現在抱えている経営上の課題や悩みをお聞かせください"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="plan">ご希望のプラン</label>
+                    <select id="plan" name="entry.3344556677">
+                        <option value="">選択してください</option>
+                        <option value="Fleeks（オンラインサロン）">Fleeks（オンラインサロン）</option>
+                        <option value="個別コンサルティング">個別コンサルティング</option>
+                        <option value="経営コンサル＋DX">経営コンサル＋DX</option>
+                        <option value="未定">まだ決めていない</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="form-submit">送信する</button>
+                
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <p>お申し込みありがとうございました！<br>24時間以内にご連絡いたします。</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Hidden iframe for form submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {showSuccess()}"></iframe>
 
     <script>
         // Smooth scroll
@@ -1140,6 +1358,49 @@
         const mobileMenuToggle = () => {
             const navMenu = document.querySelector('.nav-menu');
             navMenu.classList.toggle('active');
+        };
+
+        // Modal functions
+        let submitted = false;
+
+        function openModal() {
+            document.getElementById('contactModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            // Reset form if needed
+            if (submitted) {
+                document.getElementById('consultingForm').reset();
+                document.getElementById('successMessage').classList.remove('show');
+                submitted = false;
+            }
+        }
+
+        function showSuccess() {
+            document.getElementById('successMessage').classList.add('show');
+            document.querySelector('.form-submit').style.display = 'none';
+            setTimeout(() => {
+                closeModal();
+                document.querySelector('.form-submit').style.display = 'block';
+            }, 3000);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+
+        // Form submission
+        document.getElementById('consultingForm').onsubmit = function() {
+            submitted = true;
+            document.querySelector('.form-submit').disabled = true;
+            document.querySelector('.form-submit').textContent = '送信中...';
         };
     </script>
 </body>
