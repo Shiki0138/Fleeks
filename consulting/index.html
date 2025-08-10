@@ -993,7 +993,7 @@
                     </div>
                 </div>
                 
-                <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" class="cta-button">
+                <a href="#" onclick="openModal('無料経営診断'); return false;" class="cta-button">
                     無料経営診断を受ける
                     <span class="cta-subtext">3分で完了・即日結果をお届け</span>
                 </a>
@@ -1125,7 +1125,7 @@
                         <li>成果保証制度</li>
                     </ul>
                     
-                    <a href="javascript:void(0)" class="package-cta" onclick="openModal()">無料相談を予約</a>
+                    <a href="#" onclick="openModal('個別コンサルティング'); return false;" class="package-cta">無料相談を予約</a>
                 </div>
                 
                 <div class="package fade-in-up">
@@ -1145,7 +1145,7 @@
                         <li>完全伴走型サポート</li>
                     </ul>
                     
-                    <a href="javascript:void(0)" class="package-cta" onclick="openModal()">お問い合わせ</a>
+                    <a href="#" onclick="openModal('経営コンサル＋DX'); return false;" class="package-cta">お問い合わせ</a>
                 </div>
             </div>
         </div>
@@ -1163,10 +1163,10 @@
                     3分で完了し、即日で診断結果をお届けします。
                 </p>
                 
-                <a href="javascript:void(0)" 
+                <a href="#" 
+                   onclick="openModal('無料経営診断'); return false;"
                    class="cta-button" 
-                   style="font-size: 1.3rem; padding: 25px 60px;"
-                   onclick="openModal()">
+                   style="font-size: 1.3rem; padding: 25px 60px;">
                     <i class="fas fa-clipboard-check" style="margin-right: 10px;"></i>
                     無料経営診断を受ける
                     <span class="cta-subtext">3分で完了・即日結果</span>
@@ -1204,66 +1204,53 @@
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal()">&times;</button>
-            <h2 class="form-title">無料経営診断のお申し込み</h2>
+            <h2 class="form-title">お問い合わせフォーム</h2>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.7); margin-bottom: 30px;">
+                選択プラン: <span id="selectedPlanDisplay" style="color: var(--neon-blue);">-</span>
+            </p>
             
-            <form id="consultingForm" action="YOUR_GOOGLE_FORM_ACTION_URL" method="POST" target="hidden_iframe">
+            <form id="consultingForm">
                 <div class="form-group">
                     <label for="name">お名前 <span class="required">*</span></label>
-                    <input type="text" id="name" name="entry.XXXXXXXXX" required>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="company">会社名</label>
-                    <input type="text" id="company" name="entry.XXXXXXXXX">
+                    <input type="text" id="company" name="company">
                 </div>
                 
                 <div class="form-group">
                     <label for="email">メールアドレス <span class="required">*</span></label>
-                    <input type="email" id="email" name="entry.XXXXXXXXX" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="phone">電話番号</label>
-                    <input type="tel" id="phone" name="entry.XXXXXXXXX">
-                </div>
-                
-                <div class="form-group">
-                    <label for="membership">Fleeksメンバーシップ <span class="required">*</span></label>
-                    <select id="membership" name="entry.XXXXXXXXX" required>
-                        <option value="">選択してください</option>
-                        <option value="Fleeksメンバー">Fleeksメンバー</option>
-                        <option value="メンバーではない">メンバーではない</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="service">ご検討中のサービス <span class="required">*</span></label>
-                    <select id="service" name="entry.XXXXXXXXX" required>
-                        <option value="">選択してください</option>
-                        <option value="個別コンサルティング">個別コンサルティング</option>
-                        <option value="Fleeks（オンラインサロン）">Fleeks（オンラインサロン）</option>
-                        <option value="経営コンサル＋DX">経営コンサル＋DX</option>
-                        <option value="その他">その他</option>
-                    </select>
+                    <input type="tel" id="phone" name="phone">
                 </div>
                 
                 <div class="form-group">
                     <label for="message">お問い合わせ内容 <span class="required">*</span></label>
-                    <textarea id="message" name="entry.XXXXXXXXX" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+                    <textarea id="message" name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
                 </div>
+                
+                <input type="hidden" id="planName" name="planName" value="">
                 
                 <button type="submit" class="form-submit">送信する</button>
                 
                 <div id="successMessage" class="success-message">
                     <i class="fas fa-check-circle"></i>
-                    <p>お申し込みありがとうございました！<br>24時間以内にご連絡いたします。</p>
+                    <p>お申し込みありがとうございました！<br>2営業日以内にご連絡いたします。</p>
+                </div>
+                
+                <div id="errorMessage" class="success-message" style="background: rgba(244, 67, 54, 0.2); border-color: #f44336; color: #f44336;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>送信中にエラーが発生しました。<br>しばらくしてから再度お試しください。</p>
                 </div>
             </form>
         </div>
     </div>
-    
-    <!-- Hidden iframe for form submission -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {showSuccess()}"></iframe>
 
     <script>
         // Smooth scroll
@@ -1361,9 +1348,12 @@
         // Modal functions
         let submitted = false;
 
-        function openModal() {
+        function openModal(planName = '') {
             document.getElementById('contactModal').classList.add('active');
             document.body.style.overflow = 'hidden';
+            // Set the plan name
+            document.getElementById('planName').value = planName;
+            document.getElementById('selectedPlanDisplay').textContent = planName || '-';
         }
 
         function closeModal() {
@@ -1395,10 +1385,62 @@
         };
 
         // Form submission
-        document.getElementById('consultingForm').onsubmit = function() {
-            submitted = true;
-            document.querySelector('.form-submit').disabled = true;
-            document.querySelector('.form-submit').textContent = '送信中...';
+        document.getElementById('consultingForm').onsubmit = function(e) {
+            e.preventDefault();
+            
+            const submitButton = document.querySelector('.form-submit');
+            submitButton.disabled = true;
+            submitButton.textContent = '送信中...';
+            
+            // Hide any previous messages
+            document.getElementById('successMessage').classList.remove('show');
+            document.getElementById('errorMessage').classList.remove('show');
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                company: document.getElementById('company').value || '',
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value || '',
+                message: document.getElementById('message').value,
+                planName: document.getElementById('planName').value || '未指定'
+            };
+            
+            // Replace with your actual GAS Web App URL
+            const GAS_URL = 'https://script.google.com/macros/s/AKfycbwTkzB9CynX7Yt8mf0EElJxZZ6q2GePEFZn9C46-Qp8FN0d6DEoMJF9ZioM7Rq9DT2H/exec';
+            
+            // Send to GAS
+            fetch(GAS_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Important for GAS
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                // With no-cors, we can't read the response, so we assume success
+                submitted = true;
+                document.getElementById('successMessage').classList.add('show');
+                submitButton.style.display = 'none';
+                
+                // Reset form after delay
+                setTimeout(() => {
+                    closeModal();
+                    document.getElementById('consultingForm').reset();
+                    submitButton.style.display = 'block';
+                    submitButton.disabled = false;
+                    submitButton.textContent = '送信する';
+                }, 3000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').classList.add('show');
+                submitButton.disabled = false;
+                submitButton.textContent = '送信する';
+            });
+            
+            return false;
         };
     </script>
 </body>
