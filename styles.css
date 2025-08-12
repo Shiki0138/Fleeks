@@ -689,7 +689,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -2475,6 +2475,13 @@ header.scrolled {
 /* Mobile Break Utility */
 .mobile-break {
     display: inline;
+}
+
+/* Tablet/Medium screens */
+@media (max-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
