@@ -1,0 +1,60 @@
+name: Deploy to X-Server
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: |
+        cd fleeks-react
+        npm ci
+    
+    - name: Build project
+      run: |
+        cd fleeks-react
+        npm run build
+    
+    - name: Debug FTP Connection
+      run: |
+        echo "Testing FTP connection..."
+        echo "Server: ${{ secrets.FTP_SERVER }}"
+        echo "Username length: ${#USERNAME}"
+        echo "Password length: ${#PASSWORD}"
+      env:
+        USERNAME: ${{ secrets.FTP_USERNAME }}
+        PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    
+    - name: Deploy to X-Server via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: ./public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.github/**
+          **/fleeks-react/src/**
+          **/fleeks-react/public/**
+          **/fleeks-react/package*.json
+          **/fleeks-react/vite.config.js
+          **/fleeks-react/eslint.config.js
+          **/*.md

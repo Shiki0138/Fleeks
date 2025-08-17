@@ -1,0 +1,21 @@
+name: Test FTP Connection
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Test FTP with curl
+      run: |
+        echo "Testing FTP connection..."
+        curl -v --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" \
+          ftp://${{ secrets.FTP_SERVER }}/ --list-only || echo "FTP test failed"
+    
+    - name: Test FTPS with curl
+      run: |
+        echo "Testing FTPS connection..."
+        curl -v --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}" \
+          --ftp-ssl ftps://${{ secrets.FTP_SERVER }}/ --list-only || echo "FTPS test failed"
